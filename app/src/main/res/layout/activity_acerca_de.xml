@@ -7,6 +7,70 @@
     android:background="@color/trovami_background"
     tools:context=".AcercaDe">
 
-    
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/brand_trovami_lupa"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/brand_cubit_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fredoka_semibold_style"
+        android:text="Trovami"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_brand_large"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="271dp" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular_style"
+        android:text="ES UNA APP \n DESARROLLADA POR"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="347dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/orbitron_bold_style"
+        android:text="CUBIT"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_brand_large"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="595dp" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/orbitron_bold_style"
+        android:text="DESARROLLADORES"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_medium"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="646dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

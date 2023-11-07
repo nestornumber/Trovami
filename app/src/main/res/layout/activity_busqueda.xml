@@ -28,7 +28,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="122dp"
-        android:src="@drawable/sc_trovami_lupa"
+        android:src="@drawable/brand_trovami_lupa"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

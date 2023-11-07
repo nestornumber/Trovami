@@ -6,4 +6,9 @@
     <dimen name="font_size_large">22sp</dimen>
     <dimen name="font_size_huge">26sp</dimen>
 
+    <dimen name="font_size_brand_small">25sp</dimen>
+    <dimen name="font_size_brand_large">40sp</dimen>
+    <dimen name="font_size_brand_huge">50sp</dimen>
+
+
 </resources>
