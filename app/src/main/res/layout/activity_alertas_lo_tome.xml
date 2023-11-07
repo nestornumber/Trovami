@@ -17,6 +17,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/inter_semibold_style"
         android:text="@string/alertasLoTome_titulo"
+        android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_huge"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,13 +69,13 @@
         android:id="@+id/tvVisionGeneral"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/inter_regular_style"
         android:text="@string/alertasLoTome_visionGeneral"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.074"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAlertas" />
 
