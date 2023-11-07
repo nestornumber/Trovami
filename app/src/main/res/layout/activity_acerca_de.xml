@@ -22,7 +22,7 @@
         android:src="@drawable/brand_cubit_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="417dp" />
+        tools:layout_editor_absoluteY="419dp" />
 
     <TextView
         android:id="@+id/textView8"
