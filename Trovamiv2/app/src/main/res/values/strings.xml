@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Trovami</string>
+
+    <!--    GENERAL-->
+    <string name="regresar">Regresar</string>
+    <string name="atras">Atras</string>
+
+    <!--    ALERTAS LO TOME-->
+    <string name="alertasLoTome_titulo">Alertas \"Lo Tomé\"</string>
+    <string name="alertasLoTome_visionGeneral">VISIÓN GENERAL</string>
+    <string name="alertasLoTome_descripcion1">Existe un boton \"Lo Tome\" como el siguiente en cada resultado en la busqueda de objetos</string>
+    <string name="alertasLoTome_descripcion2">Este alertas se reciben periodicamente, usted escoge cada cuanto tiempo quiere recibirlas.</string>
+    <string name="alertasLoTome_descripcion3">Este tipo de alertas le ayudan a recordar poner los objetos en el lugar donde los encontro.</string>
+    <string name="alertasLoTome_descripcion4">No dejara de recibirlas hasta que usted marque el objeto como colocado. Esto lo ayuda a colocarlo en el lugar donde debe ir.</string>
+
+
+    <!--    EDITAR OBJETO-->
+    <string name="editarObjeto_Titulo">Editar objeto</string>
+    <string name="editarObjeto_Subtitulo">Edita la información del objeto.</string>
+    <string name="editarObjeto_Nombre">NOMBRE</string>
+    <string name="editarObjeto_Ubicacion">UBICACIÓN</string>
+    <string name="editarObjeto_LugarEstanteria">ESTANTERÍA</string>
+
+    <string name="img">img</string>
+    <string name="configurar_alertas">Configurar alertas</string>
+    <string name="frecuencia_de_alertas">FRECUENCIA DE ALERTAS</string>
+    <string name="cada_5_min">Cada 5 min</string>
+    <string name="cada_10_min">Cada 10 min</string>
+    <string name="cada_30_min">Cada 30 min</string>
+    <string name="cada_1_hora">Cada 1 hora</string>
+    <string name="cada_2_horas">Cada 2 horas</string>
+    <string name="cada_3_horas">Cada 3 horas</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="tipo_de_usuario_title">Tipo de Usuario</string>
+    <string name="tipo_de_usuario_subtitle">¿Lo usará de forma individual o \n forma parte de un grupo u organización?</string>
+
+    SONIDO
+
+</resources>

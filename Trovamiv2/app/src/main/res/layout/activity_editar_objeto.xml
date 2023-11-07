@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trovami_background"
+    tools:context=".EditarObjeto">
+
+
+    <TextView
+        android:id="@+id/tvAlertas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold_style"
+        android:text="@string/editarObjeto_Titulo"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_large"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="325dp"
+        android:layout_height="140dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="83dp"
+        tools:srcCompat="@drawable/editobj_info_image_720p" />
+
+    <TextView
+        android:id="@+id/tvAlertas2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/editarObjeto_Nombre"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/editarObjeto_Ubicacion"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/trovami_edit_text_style"
+        android:ems="10"
+        android:hint="Ubicación (sea muy descriptivo)"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_smallMedium"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/trovami_edit_text_style"
+        android:ems="10"
+        android:hint="Nombre del objeto"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_smallMedium"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/editarObjeto_LugarEstanteria"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="453dp" />
+
+    <EditText
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/trovami_edit_text_style"
+        android:ems="10"
+        android:hint="Lugar en estantería (opcional)"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_smallMedium"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="481dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/editobj_save_icon_style"
+        android:fontFamily="@font/inter_semibold_style"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:text="GUARDAR"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="654dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/bu_camera_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="TOMAR FOTO"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="579dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/bu_addphoto_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="ESCOGER FOTO"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="579dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

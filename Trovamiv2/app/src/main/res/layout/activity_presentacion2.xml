@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trovami_background"
+    tools:context=".Presentacion2">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/img_presentacion2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold_style"
+        android:text="Búsqueda Instantánea"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="400dp" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular_style"
+        android:text="Encuentra tus objetos en segundos. Busca por nombre o navega por las imágenes para recordar dónde los guardaste. "
+        android:textColor="@color/trovami_textGray"
+
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="450dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/nav_regresar_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="REGRESAR"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="630dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableRight="@drawable/nav_siguiente_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingEnd="20dp"
+        android:text="SIGUIENTE"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="630dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

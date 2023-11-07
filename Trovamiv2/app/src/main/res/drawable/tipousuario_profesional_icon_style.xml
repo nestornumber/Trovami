@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/tipousuario_profesional_icon"
+        android:width="35dp"
+        android:height="35dp" />
+</layer-list>

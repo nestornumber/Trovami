@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trovami_background"
+    tools:context=".IniciarSesion">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/sc_trovami_lupa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fredoka_semibold"
+        android:text="Trovami"
+        android:textColor="@color/trovami_textGreen"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="223dp" />
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold_style"
+        android:text="Iniciar Sesión"
+        android:textAlignment="center"
+
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_large"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="NOMBRE DE USUARIO"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/trovami_edit_text_style"
+        android:ems="10"
+
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_smallMedium"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="426dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="CONTRASEÑA"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="496dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/trovami_edit_text_style"
+        android:ems="10"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_smallMedium"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="524dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/crearcuenta_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="CREAR CUENTA"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="619dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/iniciarsesion_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="INICIAR SESIÓN"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="619dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

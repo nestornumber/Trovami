@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+<!--    General-->
+<!--    ANTIGUOS COLORES-->
+<!--    <color name="trovami_background">#e6e2dc</color>-->
+<!--    <color name="trovami_textGreen">#214B5C</color>-->
+<!--    <color name="trovami_textGray">#6C6C6C</color>-->
+<!--    <color name="trovami_buttonBeigeBackground">#E5D8C6</color>-->
+<!--    <color name="trovami_buttonBeigeStroke">#C2B4A0</color>-->
+<!--    <color name="trovami_editTextBeigeBackground">#EDD2AD</color>-->
+<!--    <color name="trovami_editTextBeigeStroke">#CEA76F</color>-->
+
+<!--    NUEVOS COLORES-->
+    <color name="trovami_background">#FFE8D0</color>
+    <color name="trovami_textGreen">#224A58</color>
+    <color name="trovami_textGray">#504F4F</color>
+    <color name="trovami_buttonBeigeBackground">#FDDFB6</color>
+    <color name="trovami_buttonBeigeStroke">#D6AA6B</color>
+    <color name="trovami_editTextBeigeBackground">#FFE6C2</color>
+    <color name="trovami_editTextBeigeStroke">#D8A75F</color>
+
+
+<!-- RadioGroup-->
+    <color name="RadioButton_textcolor">#000000</color>
+
+
+</resources>
