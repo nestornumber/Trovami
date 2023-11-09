@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Trovami"
         tools:targetApi="31">
         <activity
+            android:name=".Presentacion0"
+            android:exported="false" />
+        <activity
             android:name=".AcercaDe"
             android:exported="false" />
         <activity

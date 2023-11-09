@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trovami_background"
+    tools:context=".Presentacion0">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/brand_trovami_lupa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="115dp"
+        android:fontFamily="@font/fredoka_semibold"
+        android:text="Trovami"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGreen"
+        android:textSize="@dimen/font_size_brand_huge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold_style"
+        android:text="Le damos la bienvenida"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="498dp" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular_style"
+        android:text="Conozca lo que esta app puede hacer."
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="549dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="41dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableRight="@drawable/nav_siguiente_icon_style"
+        android:fontFamily="@font/inter_regular"
+        android:padding="10dp"
+        android:paddingEnd="20dp"
+        android:text="SIGUIENTE"
+        android:textColor="@color/trovami_textGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
