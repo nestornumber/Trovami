@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trovami_background"
+    tools:context=".Ajustes">
+
+    <TextView
+        android:id="@+id/tvAlertas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold_style"
+        android:text="Ajustes"
+        android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="33dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="CUENTA"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="NOMBRE COMPLETO"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_medium"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="nombreDeUsuario"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/cerrarsesion_icon_style"
+        android:fontFamily="@font/inter_regular_style"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:drawablePadding="20dp"
+        android:textAlignment="textStart"
+        android:text="EDITAR DATOS"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:background="@drawable/trovami_btn"
+        android:drawableLeft="@drawable/cerrarsesion_icon_style"
+        android:fontFamily="@font/inter_regular_style"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:drawablePadding="20dp"
+        android:textAlignment="textStart"
+        android:text="CERRAR SESIÓN"
+        android:textColor="@color/trovami_textGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <TextView
+        android:id="@+id/tvAlertas4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:text="INFORMACIÓN ADICIONAL"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_small"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="497dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="330dp"
+        android:layout_height="62dp"
+        android:background="@drawable/trovami_btn_less_importance"
+        android:drawableLeft="@drawable/ayuda_icon_style_small"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/inter_regular_style"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="PREGUNTAS FRECUENTES"
+        android:textAlignment="textStart"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="611dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="330dp"
+        android:layout_height="62dp"
+        android:background="@drawable/trovami_btn_less_importance"
+        android:drawableLeft="@drawable/informacion_icon_style"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/inter_regular_style"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:text="Acerca de la App"
+        android:textAlignment="textStart"
+        android:textColor="@color/trovami_textGray"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="534dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -136,7 +136,7 @@
         android:id="@+id/button15"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/help_icon"
+        android:background="@drawable/ayuda_icon"
         tools:layout_editor_absoluteX="260dp"
         tools:layout_editor_absoluteY="5dp" />
 
