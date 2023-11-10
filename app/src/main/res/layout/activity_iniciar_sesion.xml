@@ -101,7 +101,7 @@
         android:fontFamily="@font/inter_regular"
         android:padding="10dp"
         android:paddingStart="20dp"
-        android:text="CREAR CUENTA"
+        android:text="Hola"
         android:textColor="@color/trovami_textGray"
         tools:layout_editor_absoluteX="43dp"
         tools:layout_editor_absoluteY="619dp" />
