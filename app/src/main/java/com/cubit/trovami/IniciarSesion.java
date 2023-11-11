@@ -1,11 +1,14 @@
 package com.cubit.trovami;
 
+
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,59 +22,57 @@ public class IniciarSesion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
-        // Obtener referencias a las vistas
         EditText editTextUsuario = findViewById(R.id.editTextText3);
         EditText editTextContrasena = findViewById(R.id.editTextText4);
         Button btnIniciarSesion = findViewById(R.id.button2);
         Button btnCrearCuenta = findViewById(R.id.button4);
+        Switch switchRecuerdame = findViewById(R.id.switch1);
 
-        // Verificar si ya se ha creado una cuenta
-        if (yaHaCreadoCuenta()) {
-            // Ocultar el botón "Crear Cuenta" si ya se ha creado una cuenta
-            btnCrearCuenta.setVisibility(View.GONE);
-        } else {
-            // Configurar el evento de clic para el botón "CREAR CUENTA"
-            btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Iniciar la actividad Registrarse1
-                    Intent intent = new Intent(IniciarSesion.this, Registrarse1.class);
-                    startActivity(intent);
-                }
-            });
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        boolean recuerdame = preferences.getBoolean("recuerdame", false);
+        boolean usuarioRegistrado = preferences.contains("usuario");
+
+        if (recuerdame) {
+            String storedUsuario = preferences.getString("usuario", "");
+            String storedContrasena = preferences.getString("contrasena", "");
+            editTextUsuario.setText(storedUsuario);
+            editTextContrasena.setText(storedContrasena);
+            switchRecuerdame.setChecked(true);
         }
 
-        // Configurar el evento de clic para el botón "INICIAR SESIÓN"
+        if (usuarioRegistrado) {
+            btnCrearCuenta.setVisibility(View.GONE);
+        }
+
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Obtener los datos ingresados
                 String usuario = editTextUsuario.getText().toString().trim();
                 String contrasena = editTextContrasena.getText().toString().trim();
 
-                // Verificar si los datos ingresados son válidos
                 if (!usuario.isEmpty() && !contrasena.isEmpty()) {
-                    // Verificar si los datos coinciden con los almacenados en SharedPreferences
                     if (verificarDatosEnSharedPreferences(usuario, contrasena)) {
-                        // Datos correctos, iniciar la actividad TipoDeUsuario
+                        if (switchRecuerdame.isChecked()) {
+                            guardarDatosRecuerdame(usuario, contrasena);
+                        }
                         Intent intent = new Intent(IniciarSesion.this, EditarObjeto.class);
                         startActivity(intent);
                     } else {
-                        // Mostrar mensaje de error si los datos son incorrectos
                         Toast.makeText(IniciarSesion.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    // Mostrar mensaje de alerta si no se ingresaron ambos datos
                     Toast.makeText(IniciarSesion.this, "Ingrese usuario y contraseña", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
 
-    private boolean yaHaCreadoCuenta() {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        // Verificar si ya se ha guardado un usuario en SharedPreferences
-        return preferences.contains("usuario");
+        btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(IniciarSesion.this, Registrarse1.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean verificarDatosEnSharedPreferences(String usuario, String contrasena) {
@@ -79,5 +80,14 @@ public class IniciarSesion extends AppCompatActivity {
         String storedUsuario = preferences.getString("usuario", "");
         String storedContrasena = preferences.getString("contrasena", "");
         return usuario.equals(storedUsuario) && contrasena.equals(storedContrasena);
+    }
+
+    private void guardarDatosRecuerdame(String usuario, String contrasena) {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("usuario", usuario);
+        editor.putString("contrasena", contrasena);
+        editor.putBoolean("recuerdame", true);
+        editor.apply();
     }
 }
