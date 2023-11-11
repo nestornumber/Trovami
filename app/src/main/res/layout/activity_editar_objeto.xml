@@ -104,7 +104,7 @@
         tools:layout_editor_absoluteY="481dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/trovami_btn"
