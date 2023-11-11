@@ -7,8 +7,18 @@
     android:background="@color/trovami_background"
     tools:context=".Busqueda">
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ajustes_icon_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
@@ -24,10 +34,9 @@
         android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="60dp"
         android:src="@drawable/brand_trovami_lupa"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="155dp" />
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="60dp" />
 
 
     <TextView

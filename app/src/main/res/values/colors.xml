@@ -27,5 +27,11 @@
 <!-- RadioGroup-->
     <color name="RadioButton_textcolor">#000000</color>
 
+<!--    Switch-->
+    <color name="colorSwitchUnchecked">#D8A75F</color>
+    <color name="colorSwitchChecked">#224A58</color>
+
+
+
 
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color cuando el Switch está desactivado -->
+    <item android:state_checked="false" android:color="@color/colorSwitchUnchecked" />
+
+    <!-- Color cuando el Switch está activado -->
+    <item android:state_checked="true" android:color="@color/colorSwitchChecked" />
+
+    <!-- Color predeterminado -->
+    <item android:color="@color/colorSwitchUnchecked" />
+</selector>
