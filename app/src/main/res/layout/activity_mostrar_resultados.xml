@@ -17,27 +17,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <Button-->
-    <!--        android:id="@+id/button1"-->
-    <!--        android:layout_width="300dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/trovami_btn_rounded"-->
-    <!--        android:drawableRight="@drawable/buscar_icon_style"-->
-    <!--        android:fontFamily="@font/inter_regular_style"-->
-    <!--        android:padding="10dp"-->
-    <!--        android:paddingStart="25dp"-->
-    <!--        android:paddingEnd="25dp"-->
-    <!--        android:text="Buscar"-->
-    <!--        android:textAlignment="textStart"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textColor="@color/trovami_textGray"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        tools:layout_editor_absoluteY="117dp" />-->
-
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="300dp"
+        android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:background="@drawable/trovami_btn_rounded"
         android:drawableRight="@drawable/buscar_icon_style"
@@ -54,5 +36,5 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="117dp" />
 
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
