@@ -14,7 +14,7 @@
         android:layout_marginTop="56dp"
         android:src="@drawable/brand_trovami_lupa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,10 +37,10 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/inter_bold_style"
-        android:text="Iniciar Sesión"
 
+        android:text="Iniciar Sesión"
         android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_large"
@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
@@ -66,7 +67,6 @@
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginBottom="143dp"
-
         android:background="@drawable/trovami_edit_text_style"
         android:ems="10"
         android:inputType="text"
@@ -74,22 +74,19 @@
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
         app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/tvAlertas5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
         android:layout_marginBottom="103dp"
         android:fontFamily="@font/inter_regular"
         android:text="CONTRASEÑA"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
         app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextText4"
@@ -103,9 +100,7 @@
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
         app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView4" />
 
     <Button
         android:id="@+id/button4"

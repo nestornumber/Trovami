@@ -5,26 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/trovami_background"
-    android:padding="40dp"
     tools:context=".ConfigurarAlertas">
-
-    <!--    <Button-->
-    <!--        android:id="@+id/button15"-->
-    <!--        android:layout_width="48dp"-->
-    <!--        android:layout_height="48dp"-->
-    <!--        android:background="@drawable/ayuda_icon"-->
-    <!--        tools:layout_editor_absoluteX="136dp"-->
-    <!--        tools:layout_editor_absoluteY="84dp" />-->
 
     <TextView
         android:id="@+id/tvConfigurarAlertas1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+
         android:fontFamily="@font/inter_semibold_style"
         android:text="@string/configurar_alertas"
-
         android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_large"
@@ -33,12 +23,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ayuda_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas1" />
+
+
     <TextView
         android:id="@+id/tvConfigurarAlertas2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/inter_regular_style"
         android:text="@string/frecuencia_de_alertas"
         android:textSize="@dimen/font_size_small"
@@ -172,7 +174,7 @@
         android:id="@+id/btnGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/trovami_btn"
         android:fontFamily="@font/inter_regular_style"
         android:text="@string/guardar"

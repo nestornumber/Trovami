@@ -31,6 +31,7 @@
         android:textColor="@color/trovami_textGreen"
         android:textSize="@dimen/font_size_brand_huge"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
