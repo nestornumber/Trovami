@@ -55,7 +55,7 @@ public class IniciarSesion extends AppCompatActivity {
         btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-      
+
                 Intent intent = new Intent(IniciarSesion.this, Registrarse1.class);
                 startActivity(intent);
             }
