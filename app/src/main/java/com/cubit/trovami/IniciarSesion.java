@@ -38,7 +38,7 @@ public class IniciarSesion extends AppCompatActivity {
                     // Verificar si los datos coinciden con los almacenados en SharedPreferences
                     if (verificarDatosEnSharedPreferences(usuario, contrasena)) {
                         // Datos correctos, iniciar la actividad TipoDeUsuario
-                        Intent intent = new Intent(IniciarSesion.this, TipoDeUsuario.class);
+                        Intent intent = new Intent(IniciarSesion.this, EditarObjeto.class);
                         startActivity(intent);
                     } else {
                         // Mostrar mensaje de error si los datos son incorrectos
