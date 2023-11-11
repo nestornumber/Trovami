@@ -46,7 +46,7 @@ public class EditarObjeto extends AppCompatActivity {
 
         Button btnTomarFoto = findViewById(R.id.button);
         Button btnSeleccionarFoto = findViewById(R.id.button3);
-        Button btnGuardar = findViewById(R.id.button);
+        Button btnGuardar = findViewById(R.id.button2);
 
         btnTomarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
