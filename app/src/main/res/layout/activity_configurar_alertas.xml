@@ -19,7 +19,7 @@
         android:textAlignment="center"
 
         android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_huge"
+        android:textSize="@dimen/font_size_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

@@ -11,21 +11,23 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
         android:fontFamily="@font/fredoka_semibold"
         android:text="Trovami"
         android:textAlignment="center"
         android:textColor="@color/trovami_textGreen"
         android:textSize="@dimen/font_size_huge"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="187dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:layout_editor_absoluteX="158dp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/brand_trovami_lupa"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="67dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="155dp" />
 
 
     <TextView
@@ -37,10 +39,8 @@
         android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="346dp" />
 
     <Button
         android:id="@+id/button"
@@ -54,8 +54,7 @@
         android:text="Tomar foto y añadir objeto"
 
         android:textColor="@color/trovami_textGray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="106dp"
         tools:layout_editor_absoluteY="480dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
