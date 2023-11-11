@@ -55,6 +55,7 @@
         android:text="@string/tipo_de_usuario_subtitle"
         android:textAlignment="center"
         android:textSize="@dimen/font_size_small"
+        android:textColor="@color/trovami_textGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
