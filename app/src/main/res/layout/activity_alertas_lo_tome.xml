@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
      xmlns:app="http://schemas.android.com/apk/res-auto"
      xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +8,6 @@
      android:background="@color/trovami_background"
      android:padding="20dp"
      tools:context=".Alertas_lo_tome">
-
 
     <TextView
         android:id="@+id/tvAlertas"
