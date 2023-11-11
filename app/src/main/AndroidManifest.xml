@@ -58,10 +58,10 @@
             android:name=".ConfigurarAlertas"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Presentacion0"
             android:exported="false" />
         <activity
-            android:name=".Presentacion0"
+            android:name=".SplashScreen"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
