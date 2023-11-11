@@ -43,14 +43,14 @@ public class EditarObjeto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_objeto);
 
-        imageView = findViewById(R.id.imageView3);
-        editTextNombre = findViewById(R.id.editTextText);
-        editTextUbicacion = findViewById(R.id.editTextText2);
-        editTextEstanteria = findViewById(R.id.editTextText3);
+        imageView = findViewById(R.id.imageView1);
+        editTextNombre = findViewById(R.id.editText1);
+        editTextUbicacion = findViewById(R.id.editText2);
+        editTextEstanteria = findViewById(R.id.editText3);
 
-        Button btnTomarFoto = findViewById(R.id.button);
-        Button btnSeleccionarFoto = findViewById(R.id.button3);
-        Button btnGuardar = findViewById(R.id.button2);
+        Button btnTomarFoto = findViewById(R.id.button2);
+        Button btnSeleccionarFoto = findViewById(R.id.button1);
+        Button btnGuardar = findViewById(R.id.button3);
 
         btnTomarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
