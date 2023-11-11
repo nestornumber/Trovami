@@ -7,19 +7,6 @@
     android:background="@color/trovami_background"
     tools:context=".TipoDeUsuario">
 
-    <TextView
-        android:id="@+id/tv6"
-        android:layout_width="325dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/tipo_de_usuario_subtitle"
-        android:textAlignment="center"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="150dp"
@@ -45,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -54,18 +40,30 @@
         android:fontFamily="@font/inter_bold_style"
         android:text="@string/tipo_de_usuario_title"
         android:textAlignment="center"
-
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/inter_regular_style"
+        android:text="@string/tipo_de_usuario_subtitle"
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
     <Button
         android:id="@+id/button4"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginTop="112dp"
         android:background="@drawable/trovami_btn"
         android:drawableLeft="@drawable/tipousuario_personal_icon_style"
         android:fontFamily="@font/inter_regular"
@@ -73,16 +71,16 @@
         android:paddingStart="20dp"
         android:text="USO PERSONAL"
         android:textColor="@color/trovami_textGray"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv6" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/trovami_btn"
         android:drawableLeft="@drawable/tipousuario_grupal2_icon_style"
         android:fontFamily="@font/inter_regular"
@@ -90,9 +88,9 @@
         android:paddingStart="20dp"
         android:text="USO GRUPAL O PROFESIONAL"
         android:textColor="@color/trovami_textGray"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
