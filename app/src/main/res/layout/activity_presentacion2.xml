@@ -22,37 +22,40 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/inter_bold_style"
         android:text="Búsqueda Instantánea"
         android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="400dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv6"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/inter_regular_style"
         android:text="Encuentra tus objetos en segundos. Busca por nombre o navega por las imágenes para recordar dónde los guardaste. "
-        android:textColor="@color/trovami_textGray"
 
         android:textAlignment="center"
+        android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="450dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="150dp"
         android:layout_height="60dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="41dp"
         android:background="@drawable/trovami_btn"
         android:drawableLeft="@drawable/nav_regresar_icon_style"
         android:fontFamily="@font/inter_regular"
@@ -60,14 +63,16 @@
         android:paddingStart="20dp"
         android:text="REGRESAR"
         android:textColor="@color/trovami_textGray"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="630dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="41dp"
         android:background="@drawable/trovami_btn"
         android:drawableRight="@drawable/nav_siguiente_icon_style"
         android:fontFamily="@font/inter_regular"
@@ -75,8 +80,8 @@
         android:paddingEnd="20dp"
         android:text="SIGUIENTE"
         android:textColor="@color/trovami_textGray"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="630dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
