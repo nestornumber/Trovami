@@ -90,6 +90,7 @@
         tools:layout_editor_absoluteY="453dp" />
 
     <EditText
+        android:id="@+id/editTextText3"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:background="@drawable/trovami_edit_text_style"
