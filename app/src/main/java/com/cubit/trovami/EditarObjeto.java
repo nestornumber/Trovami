@@ -1,5 +1,4 @@
 package com.cubit.trovami;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,9 +18,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class EditarObjeto extends AppCompatActivity {
 
@@ -63,9 +59,7 @@ public class EditarObjeto extends AppCompatActivity {
         btnSeleccionarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkGalleryPermission()) {
-                    seleccionarFoto();
-                }
+                checkGalleryPermission();
             }
         });
 
@@ -102,8 +96,10 @@ public class EditarObjeto extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_GALLERY_PERMISSION);
             return false;
+        } else {
+            seleccionarFoto();
+            return true;
         }
-        return true;
     }
 
     @Override
@@ -137,7 +133,6 @@ public class EditarObjeto extends AppCompatActivity {
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 imageView.setImageBitmap(imageBitmap);
             } else if (requestCode == REQUEST_IMAGE_PICK && data != null) {
-
                 imagenSeleccionadaUri = data.getData();
                 imageView.setImageURI(imagenSeleccionadaUri);
             }
@@ -156,12 +151,10 @@ public class EditarObjeto extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("ObjetosData", MODE_PRIVATE);
 
-
         if (preferences.contains(nombre)) {
             Toast.makeText(this, "Ya existe un objeto con ese nombre", Toast.LENGTH_SHORT).show();
             return;
         }
-
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(nombre, ubicacion);
@@ -170,13 +163,11 @@ public class EditarObjeto extends AppCompatActivity {
             editor.putString(nombre + "_estanteria", estanteria);
         }
 
-
         if (imagenSeleccionadaUri != null) {
             editor.putString(nombre + "_imagen", imagenSeleccionadaUri.toString());
         }
 
         editor.apply();
-
 
         limpiarCampos();
 
@@ -191,4 +182,3 @@ public class EditarObjeto extends AppCompatActivity {
         imagenSeleccionadaUri = null;
     }
 }
-
