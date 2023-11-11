@@ -9,49 +9,53 @@
 
 
     <TextView
-        android:id="@+id/tvAlertas"
+        android:id="@+id/tvEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/inter_semibold_style"
         android:text="@string/editarObjeto_Titulo"
         android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_large"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="32dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView1"
         android:layout_width="325dp"
         android:layout_height="140dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditar"
         tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="83dp"
         tools:srcCompat="@drawable/editobj_info_image_720p" />
 
     <TextView
-        android:id="@+id/tvAlertas2"
+        android:id="@+id/tvEditar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_regular"
         android:text="@string/editarObjeto_Nombre"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
-        tools:layout_editor_absoluteX="43dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView1"
         tools:layout_editor_absoluteY="250dp" />
 
     <TextView
-        android:id="@+id/tvAlertas3"
+        android:id="@+id/tvEditar3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_regular"
         android:text="@string/editarObjeto_Ubicacion"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
-        tools:layout_editor_absoluteX="43dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView1"
         tools:layout_editor_absoluteY="352dp" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editText2"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:background="@drawable/trovami_edit_text_style"
@@ -61,11 +65,11 @@
         android:paddingLeft="20dp"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
-        tools:layout_editor_absoluteX="43dp"
+        app:layout_constraintStart_toStartOf="@+id/tvEditar3"
         tools:layout_editor_absoluteY="380dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editText1"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:background="@drawable/trovami_edit_text_style"
@@ -75,22 +79,22 @@
         android:paddingLeft="20dp"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="279dp" />
+        app:layout_constraintStart_toStartOf="@+id/tvEditar2"
+        tools:layout_editor_absoluteY="280dp" />
 
     <TextView
-        android:id="@+id/tvAlertas4"
+        android:id="@+id/tvEditar4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_regular"
         android:text="@string/editarObjeto_LugarEstanteria"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
-        tools:layout_editor_absoluteX="43dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView1"
         tools:layout_editor_absoluteY="453dp" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editText3"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:background="@drawable/trovami_edit_text_style"
@@ -100,13 +104,16 @@
         android:paddingLeft="20dp"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
-        tools:layout_editor_absoluteX="43dp"
+        app:layout_constraintStart_toStartOf="@+id/tvEditar4"
         tools:layout_editor_absoluteY="481dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="27dp"
         android:background="@drawable/trovami_btn"
         android:drawableLeft="@drawable/editobj_save_icon_style"
         android:fontFamily="@font/inter_semibold_style"
@@ -114,13 +121,17 @@
         android:paddingStart="30dp"
         android:text="GUARDAR"
         android:textColor="@color/trovami_textGray"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="654dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/trovami_btn"
         android:drawableLeft="@drawable/bu_camera_icon_style"
         android:fontFamily="@font/inter_regular"
@@ -128,13 +139,15 @@
         android:paddingStart="20dp"
         android:text="TOMAR FOTO"
         android:textColor="@color/trovami_textGray"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="579dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button1"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/trovami_btn"
         android:drawableLeft="@drawable/bu_addphoto_icon_style"
         android:fontFamily="@font/inter_regular"
@@ -142,7 +155,7 @@
         android:paddingStart="20dp"
         android:text="ESCOGER FOTO"
         android:textColor="@color/trovami_textGray"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="579dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

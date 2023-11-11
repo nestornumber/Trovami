@@ -9,7 +9,6 @@
      android:padding="20dp"
      tools:context=".Alertas_lo_tome">
 
-
     <TextView
         android:id="@+id/tvAlertas"
         android:layout_width="wrap_content"
