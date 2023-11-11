@@ -5,65 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/trovami_background"
-    tools:context=".Busqueda">
+    tools:context=".Busqueda"
+    tools:layout_editor_absoluteY="25dp">
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/button3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/ajustes_icon_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/brand_trovami_lupa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/fredoka_semibold"
         android:text="Trovami"
         android:textAlignment="center"
         android:textColor="@color/trovami_textGreen"
         android:textSize="@dimen/font_size_huge"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:layout_editor_absoluteX="158dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/brand_trovami_lupa"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="60dp" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/trovami_btn_rounded"
+        android:drawableRight="@drawable/buscar_icon_style"
+        android:fontFamily="@font/inter_regular_style"
+        android:padding="10dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:text="Buscar"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/trovami_textGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/inter_regular_style"
-        android:text="Presione enter en el teclado para buscar o toque en el icono de lupa."
+        android:text="En el botón de arriba puede buscar objetos, abajo puede añadir objetos."
         android:textAlignment="center"
         android:textColor="@color/trovami_textGray"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="346dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/bu_camera_icon_style"
+        android:drawableLeft="@drawable/anadir_objeto_icon_style"
         android:fontFamily="@font/inter_regular_style"
         android:padding="10dp"
-
-        android:text="Tomar foto y añadir objeto"
-
+        android:paddingStart="20dp"
+        android:text="Añadir objeto"
         android:textColor="@color/trovami_textGray"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="480dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

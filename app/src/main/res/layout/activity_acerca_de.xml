@@ -52,7 +52,7 @@
         android:fontFamily="@font/fredoka_semibold_style"
         android:text="Trovami"
         android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
+        android:textColor="@color/trovami_textGreen"
         android:textSize="@dimen/font_size_brand_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
