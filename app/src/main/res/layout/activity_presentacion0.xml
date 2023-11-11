@@ -45,7 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="498dp" />
+        tools:layout_editor_absoluteY="498dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv6"
@@ -58,7 +59,8 @@
         android:textSize="@dimen/font_size_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="549dp" />
+        tools:layout_editor_absoluteY="549dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"

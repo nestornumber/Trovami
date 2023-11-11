@@ -8,7 +8,6 @@
     tools:context=".Presentacion1">
 
     <ImageView
-        android:id="@+id/imageView5"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="100dp"
@@ -16,10 +15,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
 
     <TextView
-        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -34,7 +33,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
-        android:id="@+id/tv6"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -61,7 +59,8 @@
         android:text="REGRESAR"
         android:textColor="@color/trovami_textGray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateIds" />
 
     <Button
         android:id="@+id/button2"
@@ -117,37 +116,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginBottom="41dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/nav_regresar_icon_style"
-        android:fontFamily="@font/inter_regular"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="REGRESAR"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="41dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableRight="@drawable/nav_siguiente_icon_style"
-        android:fontFamily="@font/inter_regular"
-        android:padding="10dp"
-        android:paddingEnd="20dp"
-        android:text="SIGUIENTE"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

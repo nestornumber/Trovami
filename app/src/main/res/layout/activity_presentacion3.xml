@@ -30,7 +30,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="400dp" />
+        tools:layout_editor_absoluteY="400dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv6"
@@ -44,7 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="450dp" />
+        tools:layout_editor_absoluteY="450dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button4"
@@ -58,7 +60,8 @@
         android:text="REGRESAR"
         android:textColor="@color/trovami_textGray"
         tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="630dp" />
+        tools:layout_editor_absoluteY="630dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"
@@ -72,6 +75,7 @@
         android:text="SIGUIENTE"
         android:textColor="@color/trovami_textGray"
         tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="630dp" />
+        tools:layout_editor_absoluteY="630dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
