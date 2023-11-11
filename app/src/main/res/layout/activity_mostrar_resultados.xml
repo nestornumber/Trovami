@@ -9,14 +9,50 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/ajustes_icon_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    <Button-->
+    <!--        android:id="@+id/button1"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/trovami_btn_rounded"-->
+    <!--        android:drawableRight="@drawable/buscar_icon_style"-->
+    <!--        android:fontFamily="@font/inter_regular_style"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:paddingStart="25dp"-->
+    <!--        android:paddingEnd="25dp"-->
+    <!--        android:text="Buscar"-->
+    <!--        android:textAlignment="textStart"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textColor="@color/trovami_textGray"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        tools:layout_editor_absoluteY="117dp" />-->
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trovami_btn_rounded"
+        android:drawableRight="@drawable/buscar_icon_style"
+        android:fontFamily="@font/inter_regular_style"
+        android:hint="¿Qué desea buscar?"
+        android:padding="10dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/trovami_textGray"
+        android:textSize="@dimen/font_size_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="117dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
