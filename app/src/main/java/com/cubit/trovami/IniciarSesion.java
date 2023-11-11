@@ -1,6 +1,5 @@
 package com.cubit.trovami;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,6 +25,22 @@ public class IniciarSesion extends AppCompatActivity {
         Button btnIniciarSesion = findViewById(R.id.button2);
         Button btnCrearCuenta = findViewById(R.id.button4);
 
+        // Verificar si ya se ha creado una cuenta
+        if (yaHaCreadoCuenta()) {
+            // Ocultar el botón "Crear Cuenta" si ya se ha creado una cuenta
+            btnCrearCuenta.setVisibility(View.GONE);
+        } else {
+            // Configurar el evento de clic para el botón "CREAR CUENTA"
+            btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Iniciar la actividad Registrarse1
+                    Intent intent = new Intent(IniciarSesion.this, Registrarse1.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
         // Configurar el evento de clic para el botón "INICIAR SESIÓN"
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +49,7 @@ public class IniciarSesion extends AppCompatActivity {
                 String usuario = editTextUsuario.getText().toString().trim();
                 String contrasena = editTextContrasena.getText().toString().trim();
 
-                // Verificar si se ingresaron ambos datos
+                // Verificar si los datos ingresados son válidos
                 if (!usuario.isEmpty() && !contrasena.isEmpty()) {
                     // Verificar si los datos coinciden con los almacenados en SharedPreferences
                     if (verificarDatosEnSharedPreferences(usuario, contrasena)) {
@@ -51,16 +66,12 @@ public class IniciarSesion extends AppCompatActivity {
                 }
             }
         });
+    }
 
-        // Configurar el evento de clic para el botón "CREAR CUENTA"
-        btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Iniciar la actividad Registrarse1
-                Intent intent = new Intent(IniciarSesion.this, Registrarse1.class);
-                startActivity(intent);
-            }
-        });
+    private boolean yaHaCreadoCuenta() {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        // Verificar si ya se ha guardado un usuario en SharedPreferences
+        return preferences.contains("usuario");
     }
 
     private boolean verificarDatosEnSharedPreferences(String usuario, String contrasena) {
