@@ -28,8 +28,10 @@
         android:layout_width="325dp"
         android:layout_height="140dp"
         android:layout_marginTop="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEditar"
-        tools:layout_editor_absoluteX="43dp"
         tools:srcCompat="@drawable/editobj_info_image_720p" />
 
     <TextView
