@@ -25,7 +25,7 @@
             android:name=".Ajustes"
             android:exported="false" />
         <activity
-            android:name=".Presentacion0"
+            android:name=".Presentacion1"
             android:exported="false" />
         <activity
             android:name=".AcercaDe"
@@ -61,7 +61,7 @@
             android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".Presentacion1"
+            android:name=".Presentacion0"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
