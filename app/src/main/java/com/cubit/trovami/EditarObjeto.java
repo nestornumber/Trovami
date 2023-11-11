@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -33,6 +34,9 @@ public class EditarObjeto extends AppCompatActivity {
     private EditText editTextNombre;
     private EditText editTextUbicacion;
     private EditText editTextEstanteria;
+
+    // Variable para almacenar la imagen seleccionada
+    private Uri imagenSeleccionadaUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +138,9 @@ public class EditarObjeto extends AppCompatActivity {
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 imageView.setImageBitmap(imageBitmap);
             } else if (requestCode == REQUEST_IMAGE_PICK && data != null) {
-                imageView.setImageURI(data.getData());
+                // Obtener la URI de la imagen seleccionada
+                imagenSeleccionadaUri = data.getData();
+                imageView.setImageURI(imagenSeleccionadaUri);
             }
         }
     }
@@ -164,6 +170,12 @@ public class EditarObjeto extends AppCompatActivity {
         if (!estanteria.isEmpty()) {
             editor.putString(nombre + "_estanteria", estanteria);
         }
+
+        // Guardar la imagen
+        if (imagenSeleccionadaUri != null) {
+            editor.putString(nombre + "_imagen", imagenSeleccionadaUri.toString());
+        }
+
         editor.apply();
 
         // Limpiar campos después de guardar
@@ -177,5 +189,7 @@ public class EditarObjeto extends AppCompatActivity {
         editTextUbicacion.setText("");
         editTextEstanteria.setText("");
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.editobj_info_image_720p)); // Puedes cambiar esto por la imagen predeterminada
+        imagenSeleccionadaUri = null; // Limpiar la URI de la imagen seleccionada
     }
 }
+
