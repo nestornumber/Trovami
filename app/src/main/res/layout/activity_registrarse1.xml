@@ -53,28 +53,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginBottom="202dp"
+        android:layout_marginTop="35dp"
         android:fontFamily="@font/inter_regular_style"
         android:text="NOMBRE PERSONAL"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/editTextText3"
         android:layout_width="325dp"
         android:layout_height="50dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginBottom="143dp"
+        android:layout_marginTop="9dp"
         android:background="@drawable/trovami_edit_text_style"
         android:hint="Puede ser o no el nombre completo"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/tvAlertas5"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlertas5" />
 
     <Button
         android:id="@+id/button4"
