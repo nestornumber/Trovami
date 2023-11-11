@@ -35,7 +35,7 @@ public class IniciarSesion extends AppCompatActivity {
 
                 if (!usuario.isEmpty() && !contrasena.isEmpty()) {
                     if (verificarDatosEnSharedPreferences(usuario, contrasena)) {
-                        Intent intent = new Intent(IniciarSesion.this, TipoDeUsuario.class);
+                        Intent intent = new Intent(IniciarSesion.this, EditarObjeto.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(IniciarSesion.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
