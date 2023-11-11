@@ -13,7 +13,7 @@ public class Busqueda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busqueda);
 
-        Button btnTomarFoto = findViewById(R.id.button);
+        Button btnTomarFoto = findViewById(R.id.button2);
 
         btnTomarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
