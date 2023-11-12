@@ -39,85 +39,94 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <RelativeLayout
-        android:layout_width="350dp"
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@drawable/trovami_card_result"
-        android:padding="16dp"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText1">
 
-        <!-- Primer Texto -->
         <TextView
             android:id="@+id/objetoNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre del Objeto"
             android:textColor="@color/trovami_textGray"
-            android:fontFamily="@font/inter_bold_style"
-            android:textSize="18sp" />
+            android:fontFamily="@font/inter_semibold_style"
+            android:textSize="@dimen/font_size_large" />
 
-<!--        &lt;!&ndash; Segundo Texto &ndash;&gt;-->
-<!--        <TextView-->
-<!--            android:id="@+id/segundoTexto"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/objetoNombre"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:text="Segundo Texto"-->
-<!--            android:textSize="16sp" />-->
-
-        <!-- Imagen -->
         <ImageView
             android:id="@+id/imagen"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@id/objetoNombre"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/tu_imagen" />
+            android:src="@drawable/editobj_info_image_720p" />
 
-        <!-- Tercer Texto -->
         <TextView
             android:id="@+id/objetoUbicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imagen"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:text="Ubicación"
-            android:textSize="16sp" />
-
-        <!-- Botón Izquierdo -->
-        <Button
-            android:id="@+id/botonIzquierdo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/trovami_btn_editar"
-            android:fontFamily="@font/inter_regular_style"
+            android:fontFamily="@font/inter_regular"
             android:textColor="@color/trovami_textGray"
-            android:textAllCaps="false"
-            android:padding="10dp"
-            android:layout_below="@id/objetoUbicacion"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="8dp"
-            android:text="Editar" />
+            android:textSize="@dimen/font_size_medium" />
 
-        <!-- Botón Derecho -->
-        <Button
-            android:id="@+id/botonDerecho"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/objetoEstanteria"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/trovami_btn_lotome"
-            android:fontFamily="@font/inter_regular_style"
-            android:textColor="@color/trovami_textWhite"
-            android:textAllCaps="false"
-            android:padding="10dp"
             android:layout_below="@id/objetoUbicacion"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:text="Lo Tomé" />
+            android:layout_marginTop="10dp"
+            android:text="Ubicación"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/trovami_textGray"
+            android:textSize="@dimen/font_size_smallMedium" />
+
+        <LinearLayout
+            android:id="@+id/botonesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/objetoEstanteria"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/botonEditar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/trovami_btn_editar"
+                android:fontFamily="@font/inter_regular_style"
+                android:textColor="@color/trovami_textGray"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_size_smallMedium"
+                android:padding="10dp"
+                android:text="Editar" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/botonLoTome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/trovami_btn_lotome"
+                android:fontFamily="@font/inter_regular_style"
+                android:textColor="@color/trovami_textWhite"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_size_smallMedium"
+                android:padding="10dp"
+                android:text="Lo Tomé" />
+        </LinearLayout>
 
     </RelativeLayout>
 

@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid
-        android:color="@color/trovami_buttonBeigeBackground" />
+        android:color="@color/trovami_backgroundCard" />
     <corners
         android:topLeftRadius="50dp"
         android:topRightRadius="50dp"
