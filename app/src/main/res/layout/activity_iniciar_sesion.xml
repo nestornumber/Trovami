@@ -107,13 +107,13 @@
     <Button
         android:id="@+id/tvAlertas6"
         android:layout_width="175dp"
-        android:layout_height="25dp"
+        android:layout_height="32dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/trovami_btn_less_importance_less"
         android:fontFamily="@font/inter_regular"
         android:text="Olvidé mi contraseña"
         android:textAllCaps="false"
-        android:textColor="@color/trovami_textGreen"
+        android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_small"
         app:layout_constraintStart_toStartOf="@+id/editTextText4"
         app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
@@ -121,7 +121,7 @@
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/inter_regular_style"
         android:text="Recuérdame"
