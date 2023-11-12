@@ -16,7 +16,7 @@
 
 <!--    NUEVOS COLORES-->
     <color name="trovami_background">#FFE8D0</color>
-    <color name="trovami_backgroundCard">#FFDCB8</color>
+    <color name="trovami_backgroundCard">#FDDFC0</color>
     <color name="trovami_textGreen">#224A58</color>
     <color name="trovami_textGray">#504F4F</color>
     <color name="trovami_textWhite">#FFFFFF</color>
