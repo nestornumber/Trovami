@@ -1,9 +1,11 @@
 package com.cubit.trovami;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -12,12 +14,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
+import android.util.Base64;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import java.io.ByteArrayOutputStream;
 
 public class EditarObjeto extends AppCompatActivity {
 
@@ -67,6 +71,7 @@ public class EditarObjeto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 guardarDatosObjeto();
+                abrirMostrarResultados();
             }
         });
     }
@@ -132,6 +137,13 @@ public class EditarObjeto extends AppCompatActivity {
                 Bundle extras = data.getExtras();
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 imageView.setImageBitmap(imageBitmap);
+
+                // Convertir Bitmap a cadena Base64 y guardar en SharedPreferences
+                String encodedBitmap = encodeBitmapToBase64(imageBitmap);
+                SharedPreferences preferences = getSharedPreferences("ObjetosData", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(editTextNombre.getText().toString() + "_imagen", encodedBitmap);
+                editor.apply();
             } else if (requestCode == REQUEST_IMAGE_PICK && data != null) {
                 imagenSeleccionadaUri = data.getData();
                 imageView.setImageURI(imagenSeleccionadaUri);
@@ -164,7 +176,16 @@ public class EditarObjeto extends AppCompatActivity {
         }
 
         if (imagenSeleccionadaUri != null) {
-            editor.putString(nombre + "_imagen", imagenSeleccionadaUri.toString());
+            // Verificar si la imagen proviene de la cámara
+            if (imagenSeleccionadaUri.getScheme() != null && imagenSeleccionadaUri.getScheme().equals("content")) {
+                // La imagen proviene de la galería, guardar la URI
+                editor.putString(nombre + "_imagen", imagenSeleccionadaUri.toString());
+            } else {
+                // La imagen proviene de la cámara, guardar como Bitmap codificado en Base64
+                Bitmap bitmap = BitmapFactory.decodeFile(imagenSeleccionadaUri.getPath());
+                String encodedBitmap = encodeBitmapToBase64(bitmap);
+                editor.putString(nombre + "_imagen", "data:image/jpeg;base64," + encodedBitmap);
+            }
         }
 
         editor.apply();
@@ -181,4 +202,17 @@ public class EditarObjeto extends AppCompatActivity {
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.editobj_info_image_720p));
         imagenSeleccionadaUri = null;
     }
+
+    private void abrirMostrarResultados() {
+        Intent intent = new Intent(this, MostrarResultados.class);
+        startActivity(intent);
+    }
+
+    private String encodeBitmapToBase64(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
 }
+
