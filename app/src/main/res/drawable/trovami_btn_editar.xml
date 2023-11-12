@@ -4,10 +4,10 @@
     <solid
         android:color="@color/trovami_buttonBeigeBackground" />
     <corners
-        android:topLeftRadius="100dp"
-        android:topRightRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:bottomLeftRadius="100dp" />
+        android:topLeftRadius="50dp"
+        android:topRightRadius="50dp"
+        android:bottomRightRadius="50dp"
+        android:bottomLeftRadius="50dp" />
 
     <stroke
         android:width="2dp"

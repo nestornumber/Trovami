@@ -16,15 +16,19 @@
 
 <!--    NUEVOS COLORES-->
     <color name="trovami_background">#FFE8D0</color>
+    <color name="trovami_backgroundCard">#FFDCB8</color>
     <color name="trovami_textGreen">#224A58</color>
     <color name="trovami_textGray">#504F4F</color>
+    <color name="trovami_textWhite">#FFFFFF</color>
     <color name="trovami_buttonBeigeBackground">#FDDFB6</color>
     <color name="trovami_buttonBeigeStroke">#D6AA6B</color>
     <color name="trovami_editTextBeigeBackground">#FFE6C2</color>
     <color name="trovami_editTextBeigeStroke">#D8A75F</color>
+    <color name="trovami_editarGreenStroke">#224A58</color>
 
 
-<!-- RadioGroup-->
+
+    <!-- RadioGroup-->
     <color name="RadioButton_textcolor">#000000</color>
 
 <!--    Switch-->
