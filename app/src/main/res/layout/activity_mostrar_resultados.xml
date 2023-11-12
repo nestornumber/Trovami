@@ -25,6 +25,7 @@
         android:drawableRight="@drawable/buscar_icon_style"
         android:fontFamily="@font/inter_regular_style"
         android:hint="¿Qué desea buscar?"
+        android:textColorHint="@color/trovami_textGray"
         android:padding="10dp"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
