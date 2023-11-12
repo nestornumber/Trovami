@@ -66,6 +66,7 @@
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginTop="9dp"
+        android:fontFamily="@font/inter_regular_style"
         android:background="@drawable/trovami_edit_text_style"
         android:hint="Escribe tu nombre completo"
         android:textColorHint="@color/trovami_textGray"
