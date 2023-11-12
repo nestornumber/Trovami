@@ -8,20 +8,25 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.util.Base64;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class EditarObjeto extends AppCompatActivity {
 
@@ -138,16 +143,48 @@ public class EditarObjeto extends AppCompatActivity {
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 imageView.setImageBitmap(imageBitmap);
 
-                // Convertir Bitmap a cadena Base64 y guardar en SharedPreferences
-                String encodedBitmap = encodeBitmapToBase64(imageBitmap);
-                SharedPreferences preferences = getSharedPreferences("ObjetosData", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString(editTextNombre.getText().toString() + "_imagen", encodedBitmap);
-                editor.apply();
+                // Guarda la imagen en el directorio y obtén la URI
+                Uri imagenUri = guardarImagenEnDirectorioYObtenerUri(editTextNombre.getText().toString().trim(), imageBitmap);
+
+                // Guarda la URI de la imagen
+                imagenSeleccionadaUri = imagenUri;
             } else if (requestCode == REQUEST_IMAGE_PICK && data != null) {
                 imagenSeleccionadaUri = data.getData();
                 imageView.setImageURI(imagenSeleccionadaUri);
+
+                // No necesitas guardar la imagen directamente aquí
             }
+        }
+    }
+
+    private Uri guardarImagenEnDirectorioYObtenerUri(String nombre, Bitmap bitmap) {
+        try {
+            // Obtén el directorio externo específico para la aplicación
+            File directorioImagenes = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "ObjetosImagenes");
+
+            // Crear el directorio si no existe
+            if (!directorioImagenes.exists()) {
+                directorioImagenes.mkdirs();
+            }
+
+            // Crear un archivo para la imagen en el directorio
+            String nombreArchivo = "imagen_" + nombre + ".jpg";
+            File archivoImagen = new File(directorioImagenes, nombreArchivo);
+
+            // Guardar la imagen en el archivo
+            try (FileOutputStream out = new FileOutputStream(archivoImagen)) {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            }
+
+            // Notificar a la galería que se ha agregado una nueva imagen
+            MediaStore.Images.Media.insertImage(getContentResolver(), archivoImagen.getAbsolutePath(), archivoImagen.getName(), archivoImagen.getName());
+
+            // Devuelve la URI de la imagen guardada
+            return Uri.fromFile(archivoImagen);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
@@ -176,16 +213,8 @@ public class EditarObjeto extends AppCompatActivity {
         }
 
         if (imagenSeleccionadaUri != null) {
-            // Verificar si la imagen proviene de la cámara
-            if (imagenSeleccionadaUri.getScheme() != null && imagenSeleccionadaUri.getScheme().equals("content")) {
-                // La imagen proviene de la galería, guardar la URI
-                editor.putString(nombre + "_imagen", imagenSeleccionadaUri.toString());
-            } else {
-                // La imagen proviene de la cámara, guardar como Bitmap codificado en Base64
-                Bitmap bitmap = BitmapFactory.decodeFile(imagenSeleccionadaUri.getPath());
-                String encodedBitmap = encodeBitmapToBase64(bitmap);
-                editor.putString(nombre + "_imagen", "data:image/jpeg;base64," + encodedBitmap);
-            }
+            // Guardar la URI de la imagen
+            editor.putString(nombre + "_imagen", imagenSeleccionadaUri.toString());
         }
 
         editor.apply();
@@ -207,12 +236,4 @@ public class EditarObjeto extends AppCompatActivity {
         Intent intent = new Intent(this, MostrarResultados.class);
         startActivity(intent);
     }
-
-    private String encodeBitmapToBase64(Bitmap bitmap) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(byteArray, Base64.DEFAULT);
-    }
 }
-
