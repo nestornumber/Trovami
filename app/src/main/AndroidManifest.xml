@@ -21,7 +21,7 @@
             android:name=".testing"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".MostrarResultados"
             android:exported="false" />
         <activity
             android:name=".PreguntasFrecuentes"
@@ -75,7 +75,7 @@
             android:name=".Presentacion0"
             android:exported="false" />
         <activity
-            android:name=".MostrarResultados"
+            android:name=".SplashScreen"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
