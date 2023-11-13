@@ -10,21 +10,29 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-import java.util.Set;
-import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Set;
 public class MostrarResultados extends AppCompatActivity {
 
     private LinearLayout linearLayoutContenedor;
@@ -40,6 +48,9 @@ public class MostrarResultados extends AppCompatActivity {
                 ScrollView.LayoutParams.MATCH_PARENT,
                 ScrollView.LayoutParams.MATCH_PARENT
         ));
+
+
+
         scrollView.setBackgroundColor(getResources().getColor(R.color.trovami_background));
 
         LinearLayout layoutPrincipal = new LinearLayout(this);
@@ -50,6 +61,26 @@ public class MostrarResultados extends AppCompatActivity {
         );
         paramsLayoutPrincipal.setMargins(16, 16, 16, 16);
         layoutPrincipal.setLayoutParams(paramsLayoutPrincipal);
+
+        ImageButton btnAjustes = new ImageButton(this);
+        btnAjustes.setImageResource(R.drawable.ajustes_icon_style);
+        btnAjustes.setBackgroundColor(getResources().getColor(R.color.trovami_background));
+        LinearLayout.LayoutParams paramsBtnAjustes = new LinearLayout.LayoutParams(
+                150,
+                150
+        );
+        paramsBtnAjustes.gravity = Gravity.END | Gravity.TOP;
+        btnAjustes.setLayoutParams(paramsBtnAjustes);
+        layoutPrincipal.addView(btnAjustes);
+
+        btnAjustes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MostrarResultados.this, Ajustes.class);
+                startActivity(intent);
+            }
+        });
+
 
         editTextBuscar = new EditText(this);
         editTextBuscar.setHint("Ingrese el nombre del objeto");
@@ -123,6 +154,38 @@ public class MostrarResultados extends AppCompatActivity {
 
         objetoTomado = false;
         mostrarTodosObjetos();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem ajustesItem = menu.add("Ajustes");
+        MenuItem agregarObjetoItem = menu.add("Agregar Objeto");
+        MenuItem buscarItem = menu.add("Buscar");
+
+        ajustesItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(MostrarResultados.this, Ajustes.class));
+                return true;
+            }
+        });
+
+        agregarObjetoItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(MostrarResultados.this, EditarObjeto.class));
+                return true;
+            }
+        });
+
+        buscarItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(MostrarResultados.this, MostrarResultados.class));
+                return true;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     private void mostrarTodosObjetos() {

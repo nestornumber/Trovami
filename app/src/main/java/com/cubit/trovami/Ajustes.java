@@ -1,14 +1,83 @@
 package com.cubit.trovami;
 
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-
 public class Ajustes extends AppCompatActivity {
+
+    private static final String PREFS_NAME = "UserData";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
+
+        // Obtener referencia al TextView de nombreDeUsuario
+        TextView textViewNombreDeUsuario = findViewById(R.id.tvAlertas4);
+
+        // Reemplaza "nombreDeUsuarioGuardado" con la variable que contiene el nombre de usuario guardado
+        String nombreDeUsuario = obtenerNombreDeUsuarioGuardado();
+        textViewNombreDeUsuario.setText(nombreDeUsuario);
+
+        // Obtener referencias a los botones
+        Button btnEditarContraseña = findViewById(R.id.button2);
+        Button btnCambiarIdioma = findViewById(R.id.button6);
+        Button btnCerrarSesion = findViewById(R.id.button3);
+        Button btnAcercaDe = findViewById(R.id.button4);
+        Button btnSalirDeLaApp = findViewById(R.id.button5);
+
+        // Configurar eventos de clic para los botones
+        btnEditarContraseña.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Ajustes.this, Ajustes_EditarContrasena.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCambiarIdioma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Ajustes.this, CambiarIdioma.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Ajustes.this, IniciarSesion.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAcercaDe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Ajustes.this, AcercaDe.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSalirDeLaApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity(); // Cierra la actividad actual y todas las actividades relacionadas
+            }
+        });
+
+    }
+
+    private String obtenerNombreDeUsuarioGuardado() {
+        // Reemplaza "nombreDeUsuarioGuardado" con la clave correcta utilizada para guardar el nombre de usuario
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        return preferences.getString("usuario", "");
     }
 }
