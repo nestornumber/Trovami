@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,172 +7,177 @@
     android:background="@color/trovami_background"
     tools:context=".Ajustes">
 
-    <TextView
-        android:id="@+id/tvAlertas"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvAlertas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:fontFamily="@font/inter_semibold_style"
+                android:text="Ajustes"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAlertas2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="CUENTA"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlertas" />
+
+            <TextView
+                android:id="@+id/tvAlertas3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="USUARIO"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_medium"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlertas2" />
+
+            <TextView
+                android:id="@+id/tvAlertas4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="nombreDeUsuario"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_medium"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlertas3" />
+
+            <Button
+                android:id="@+id/button1"
+
+                android:layout_width="330dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/trovami_btn"
+                android:drawableLeft="@drawable/editar_icon_style"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Editar Nombres"
+                android:textAlignment="textStart"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlertas4" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="330dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/trovami_btn"
+                android:drawableLeft="@drawable/contrasena_icon_style"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Editar Contraseña"
+                android:textAlignment="textStart"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="330dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/trovami_btn"
+                android:drawableLeft="@drawable/cerrarsesion_icon_style"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Cerrar sesión"
+                android:textAlignment="textStart"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="330dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trovami_btn_less_importance"
+                android:drawableLeft="@drawable/informacion_icon_style"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Acerca de la App"
+                android:textAlignment="textStart"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas5"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlertas5" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="330dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trovami_btn"
+                android:drawableLeft="@drawable/cerrarsesion_icon_style"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Salir de la App"
+                android:textAlignment="textStart"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvAlertas5"
+                app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+            <TextView
+                android:id="@+id/tvAlertas5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="INFORMACIÓN ADICIONAL"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:fontFamily="@font/inter_semibold_style"
-        android:text="Ajustes"
-        android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvAlertas2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="CUENTA"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlertas" />
-
-    <TextView
-        android:id="@+id/tvAlertas3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="USUARIO"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_medium"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlertas2" />
-
-    <TextView
-        android:id="@+id/tvAlertas4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="nombreDeUsuario"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_medium"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlertas3" />
-
-    <Button
-        android:id="@+id/button1"
-
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/editar_icon_style"
-        android:drawablePadding="20dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="Editar Nombres"
-        android:textAlignment="textStart"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlertas4" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="14dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/contrasena_icon_style"
-        android:drawablePadding="20dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="Editar Contraseña"
-        android:textAlignment="textStart"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="14dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/idioma_icon_style"
-        android:drawablePadding="20dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="Cambiar Idioma"
-        android:textAlignment="textStart"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/cerrarsesion_icon_style"
-        android:drawablePadding="20dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="Cerrar sesión"
-        android:textAlignment="textStart"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <TextView
-        android:id="@+id/tvAlertas5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="34dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="INFORMACIÓN ADICIONAL"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="330dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/cerrarsesion_icon"
-        android:drawablePadding="20dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="Salir de la App"
-        android:textAlignment="textStart"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas5"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="330dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="17dp"
-        android:background="@drawable/trovami_btn_less_importance"
-        android:drawableLeft="@drawable/informacion_icon_style"
-        android:drawablePadding="20dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="Acerca de la App"
-        android:textAlignment="textStart"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvAlertas5"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlertas5" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentBottom="true"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+        app:itemBackground="@color/trovami_buttonBeigeBackground"
+        app:itemIconTint="@color/trovami_textGreen"
+        app:itemTextColor="@color/trovami_textGreen"
+        app:menu="@menu/menu_navigation" />
+</RelativeLayout>

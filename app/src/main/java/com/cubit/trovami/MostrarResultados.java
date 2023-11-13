@@ -32,6 +32,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.Set;
 public class MostrarResultados extends AppCompatActivity {
 
@@ -42,6 +44,35 @@ public class MostrarResultados extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id= item.getItemId();
+                if (id == R.id.home){
+                    startActivity(new Intent(getApplicationContext(),
+                            Busqueda.class));
+                    overridePendingTransition (0, 0); return true;
+                }
+                if (id == R.id.search) { return true;
+                }
+                if (id == R.id.add){
+                    startActivity(new Intent(getApplicationContext(),
+                            EditarObjeto.class));
+                    overridePendingTransition (0, 8); return true;
+                }
+                if (id == R.id.settings){
+                    startActivity(new Intent(getApplicationContext(),
+                            Ajustes.class));
+                    overridePendingTransition (0, 8); return true;
+                }
+                return false;
+            }
+        });
 
         ScrollView scrollView = new ScrollView(this);
         scrollView.setLayoutParams(new ScrollView.LayoutParams(

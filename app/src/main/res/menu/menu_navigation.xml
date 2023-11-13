@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Inicio"
+        android:icon="@drawable/nav_icon_home"/>
+    <item
+        android:id="@+id/search"
+        android:title="Buscar"
+        android:icon="@drawable/nav_icon_search"/>
+    <item
+        android:id="@+id/add"
+        android:title="Añadir"
+        android:icon="@drawable/nav_icon_add"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/nav_icon_settings"/>
+</menu>

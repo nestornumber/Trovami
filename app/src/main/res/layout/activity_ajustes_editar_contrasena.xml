@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,154 +7,178 @@
     android:background="@color/trovami_background"
     tools:context=".Ajustes_EditarContrasena">
 
-    <TextView
-        android:id="@+id/tvAjustes"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvAjustes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:fontFamily="@font/inter_semibold_style"
+                android:text="Ajustes"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAjustes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="Editar Contraseña"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustes" />
+
+            <TextView
+                android:id="@+id/tvAjustes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="29dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="DATOS ACTUALES"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustes2" />
+
+            <TextView
+                android:id="@+id/tvAjustes5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="nombredeusuario"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustes4"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustes4" />
+
+            <TextView
+                android:id="@+id/tvAjustes4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="NOMBRE COMPLETO"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_medium"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustes3"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustes3" />
+
+            <TextView
+                android:id="@+id/tvAjustes6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="MODIFICAR CONTRASEÑA"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustes5" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="325dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trovami_edit_text_style"
+                android:fontFamily="@font/inter_regular_style"
+                android:hint="Contraseña actual"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:textColor="@color/trovami_textGray"
+                android:textColorHint="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_smallMedium"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustes6"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustes6" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="325dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/trovami_edit_text_style"
+                android:fontFamily="@font/inter_regular_style"
+                android:hint="Confirme la nueva contraseña"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+
+                android:textColor="@color/trovami_textGray"
+                android:textColorHint="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_smallMedium"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustes6"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="325dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/trovami_edit_text_style"
+                android:fontFamily="@font/inter_regular_style"
+                android:hint="Nueva contraseña"
+                android:inputType="textPassword"
+
+                android:paddingLeft="20dp"
+                android:textColor="@color/trovami_textGray"
+                android:textColorHint="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_smallMedium"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustes6"
+                app:layout_constraintTop_toBottomOf="@+id/editText1" />
+
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="175dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/trovami_btn"
+                android:drawableLeft="@drawable/editobj_save_icon_style"
+                android:fontFamily="@font/inter_regular_style"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="GUARDAR"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:fontFamily="@font/inter_semibold_style"
-        android:text="Ajustes"
-        android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+        app:itemBackground="@color/trovami_buttonBeigeBackground"
+        app:itemIconTint="@color/trovami_textGreen"
+        app:itemTextColor="@color/trovami_textGreen"
+        app:menu="@menu/menu_navigation" />
 
-    <TextView
-        android:id="@+id/tvAjustes2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="Editar Contraseña"
-        android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAjustes" />
-
-    <TextView
-        android:id="@+id/tvAjustes3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="29dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="DATOS ACTUALES"
-        android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAjustes2" />
-
-    <TextView
-        android:id="@+id/tvAjustes5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="nombredeusuario"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="@+id/tvAjustes4"
-        app:layout_constraintTop_toBottomOf="@+id/tvAjustes4" />
-
-    <TextView
-        android:id="@+id/tvAjustes4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="NOMBRE COMPLETO"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_medium"
-        app:layout_constraintStart_toStartOf="@+id/tvAjustes3"
-        app:layout_constraintTop_toBottomOf="@+id/tvAjustes3" />
-
-    <TextView
-        android:id="@+id/tvAjustes6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="44dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="MODIFICAR CONTRASEÑA"
-        android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAjustes5" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/trovami_edit_text_style"
-        android:fontFamily="@font/inter_regular_style"
-        android:hint="Contraseña actual"
-        android:textColorHint="@color/trovami_textGray"
-        android:inputType="text"
-        android:paddingLeft="20dp"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_smallMedium"
-        app:layout_constraintStart_toStartOf="@+id/tvAjustes6"
-        app:layout_constraintTop_toBottomOf="@+id/tvAjustes6" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/trovami_edit_text_style"
-        android:fontFamily="@font/inter_regular_style"
-        android:hint="Confirme la nueva contraseña"
-        android:inputType="textPassword"
-        android:textColorHint="@color/trovami_textGray"
-
-        android:paddingLeft="20dp"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_smallMedium"
-        app:layout_constraintStart_toStartOf="@+id/tvAjustes6"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/trovami_edit_text_style"
-        android:fontFamily="@font/inter_regular_style"
-        android:hint="Nueva contraseña"
-        android:textColorHint="@color/trovami_textGray"
-
-        android:paddingLeft="20dp"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_smallMedium"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/tvAjustes6"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
-
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="175dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/trovami_btn"
-        android:drawableLeft="@drawable/editobj_save_icon_style"
-        android:fontFamily="@font/inter_regular_style"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:text="GUARDAR"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

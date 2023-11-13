@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,184 +7,209 @@
     android:background="@color/trovami_background"
     tools:context=".ConfigurarAlertas">
 
-    <TextView
-        android:id="@+id/tvConfigurarAlertas1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:paddingBottom="20dp">
 
-        android:fontFamily="@font/inter_semibold_style"
-        android:text="@string/configurar_alertas"
-        android:textAlignment="center"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/ayuda_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas1" />
-
-
-    <TextView
-        android:id="@+id/tvConfigurarAlertas2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
-        android:textColor="@color/trovami_textGray"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/frecuencia_de_alertas"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas1" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="125dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="13dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/cada_2_horas"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="125dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="13dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/cada_3_horas"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="SONIDO DE NOTIFICACIÓN"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="125dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/cada_1_hora"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="13dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/cada_10_min"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toEndOf="@+id/button1"
-        app:layout_constraintTop_toTopOf="@+id/button1" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="125dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/cada_30_min"
-        android:textColor="@color/trovami_textGray"
-        app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
-
-        <RadioButton
-            android:id="@+id/radButton1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Descubrimiento"
-            android:textColor="@color/RadioButton_textcolor"
-            android:textSize="@dimen/font_size_small" />
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Girasol"
-            android:textColor="@color/RadioButton_textcolor"
-            android:textSize="@dimen/font_size_small" />
+            <TextView
+                android:id="@+id/tvConfigurarAlertas1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
 
-        <RadioButton
-            android:id="@+id/radButton3"
-            android:layout_width="217dp"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Persianas"
-            android:textColor="@color/RadioButton_textcolor"
-            android:textSize="@dimen/font_size_small" />
-    </RadioGroup>
+                android:fontFamily="@font/inter_semibold_style"
+                android:text="@string/configurar_alertas"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/cada_5_min"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
-        app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas2"
-        tools:ignore="TextContrastCheck" />
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ayuda_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas1" />
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="wrap_content"
+
+            <TextView
+                android:id="@+id/tvConfigurarAlertas2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/frecuencia_de_alertas"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas1" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/cada_2_horas"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/cada_3_horas"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/button9"
+                app:layout_constraintTop_toBottomOf="@+id/button11" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="SONIDO DE NOTIFICACIÓN"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/button12" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/cada_1_hora"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/button9"
+                app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="13dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/cada_10_min"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toEndOf="@+id/button1"
+                app:layout_constraintTop_toTopOf="@+id/button1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/cada_30_min"
+                android:textColor="@color/trovami_textGray"
+                app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+                <RadioButton
+                    android:id="@+id/radButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Descubrimiento"
+                    android:textColor="@color/RadioButton_textcolor"
+                    android:textSize="@dimen/font_size_small" />
+
+                <RadioButton
+                    android:id="@+id/radButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Girasol"
+                    android:textColor="@color/RadioButton_textcolor"
+                    android:textSize="@dimen/font_size_small" />
+
+                <RadioButton
+                    android:id="@+id/radButton3"
+                    android:layout_width="217dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Persianas"
+                    android:textColor="@color/RadioButton_textcolor"
+                    android:textSize="@dimen/font_size_small" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/cada_5_min"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvConfigurarAlertas2"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfigurarAlertas2"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/guardar"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/trovami_btn"
-        android:fontFamily="@font/inter_regular_style"
-        android:text="@string/guardar"
-        android:textColor="@color/trovami_textGray"
-        android:textSize="@dimen/font_size_small"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+        app:itemBackground="@color/trovami_buttonBeigeBackground"
+        app:itemIconTint="@color/trovami_textGreen"
+        app:itemTextColor="@color/trovami_textGreen"
+        app:menu="@menu/menu_navigation" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -46,6 +49,35 @@ public class EditarObjeto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_objeto);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id= item.getItemId();
+                if (id == R.id.home){
+                    startActivity(new Intent(getApplicationContext(),
+                            Busqueda.class));
+                    overridePendingTransition (0, 0); return true;
+                }
+                if (id == R.id.search) {
+                    startActivity(new Intent(getApplicationContext(),
+                            MostrarResultados.class));
+                    overridePendingTransition(0, 0); return true;
+                }
+                if (id == R.id.add){ return true;
+                }
+                if (id == R.id.settings){
+                    startActivity(new Intent(getApplicationContext(),
+                            Ajustes.class));
+                    overridePendingTransition (0, 8); return true;
+                }
+                return false;
+            }
+        });
 
         imageView = findViewById(R.id.imageView1);
         editTextNombre = findViewById(R.id.editText1);
