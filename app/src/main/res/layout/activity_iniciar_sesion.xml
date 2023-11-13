@@ -97,7 +97,7 @@
         android:background="@drawable/trovami_edit_text_style"
         android:fontFamily="@font/inter_regular_style"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:textColor="@color/trovami_textGray"
         android:textSize="@dimen/font_size_smallMedium"
@@ -163,6 +163,8 @@
         android:textColor="@color/trovami_textGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

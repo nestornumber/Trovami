@@ -1,10 +1,11 @@
 package com.cubit.trovami;
 
-
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class IniciarSesion extends AppCompatActivity {
 
     private static final String PREFS_NAME = "UserData";
+    private int intentosFallidos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class IniciarSesion extends AppCompatActivity {
         Button btnIniciarSesion = findViewById(R.id.button2);
         Button btnCrearCuenta = findViewById(R.id.button4);
         Switch switchRecuerdame = findViewById(R.id.switch1);
+        Button btnOlvideContrasena = findViewById(R.id.tvAlertas6);
 
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean recuerdame = preferences.getBoolean("recuerdame", false);
@@ -58,7 +61,13 @@ public class IniciarSesion extends AppCompatActivity {
                         Intent intent = new Intent(IniciarSesion.this, Busqueda.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(IniciarSesion.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                        intentosFallidos++;
+                        if (intentosFallidos >= 3) {
+                            bloquearPantallaPor30Segundos();
+                            Toast.makeText(IniciarSesion.this, "Has intentado demasiadas veces. Inténtalo de nuevo más tarde.", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(IniciarSesion.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 } else {
                     Toast.makeText(IniciarSesion.this, "Ingrese usuario y contraseña", Toast.LENGTH_SHORT).show();
@@ -73,13 +82,20 @@ public class IniciarSesion extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnOlvideContrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarDialogoOlvideContrasena();
+            }
+        });
     }
 
     private boolean verificarDatosEnSharedPreferences(String usuario, String contrasena) {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String storedUsuario = preferences.getString("usuario", "");
         String storedContrasena = preferences.getString("contrasena", "");
-        return usuario.equals(storedUsuario) && contrasena.equals(storedContrasena);
+        return usuario.equals(storedUsuario) || contrasena.equals(storedContrasena);
     }
 
     private void guardarDatosRecuerdame(String usuario, String contrasena) {
@@ -89,5 +105,68 @@ public class IniciarSesion extends AppCompatActivity {
         editor.putString("contrasena", contrasena);
         editor.putBoolean("recuerdame", true);
         editor.apply();
+    }
+
+    private void bloquearPantallaPor30Segundos() {
+        // Deshabilitar los EditText
+        EditText editTextUsuario = findViewById(R.id.editTextText3);
+        EditText editTextContrasena = findViewById(R.id.editTextText4);
+        editTextUsuario.setEnabled(false);
+        editTextContrasena.setEnabled(false);
+
+        // Habilitar después de 30 segundos
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                editTextUsuario.setEnabled(true);
+                editTextContrasena.setEnabled(true);
+                intentosFallidos = 0; // Reiniciar contador de intentos fallidos
+            }
+        }, 30000); // 30 segundos
+    }
+
+    private void mostrarDialogoOlvideContrasena() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Olvidé mi contraseña");
+        builder.setMessage("Ingresa tu nombre de usuario y la última contraseña que recuerdas.");
+
+        View view = getLayoutInflater().inflate(R.layout.dialog_olvide_contrasena, null);
+        EditText etUsuarioRecuperacion = view.findViewById(R.id.etUsuarioRecuperacion);
+        EditText etUltimaContrasena = view.findViewById(R.id.etUltimaContrasena);
+
+        builder.setView(view);
+
+        builder.setPositiveButton("Verificar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String usuarioRecuperacion = etUsuarioRecuperacion.getText().toString().trim();
+                String ultimaContrasena = etUltimaContrasena.getText().toString().trim();
+                verificarDatosRecuperacion(usuarioRecuperacion, ultimaContrasena);
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.show();
+    }
+
+    private void verificarDatosRecuperacion(String usuarioRecuperacion, String ultimaContrasena) {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String storedUsuario = preferences.getString("usuario", "");
+        String storedUltimaContrasena = preferences.getString("contrasena", "");
+
+        if (usuarioRecuperacion.equals(storedUsuario) || ultimaContrasena.equals(storedUltimaContrasena)) {
+            // Al menos uno de los datos es correcto, redirige a la actividad de cambiar contraseña
+            Intent intent = new Intent(IniciarSesion.this, Ajustes_EditarContrasena.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Datos incorrectos. No se pudo verificar la identidad.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

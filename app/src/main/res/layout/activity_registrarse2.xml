@@ -101,7 +101,7 @@
         android:background="@drawable/trovami_edit_text_style"
         android:fontFamily="@font/inter_regular_style"
         android:hint="Escriba una contraseña"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:textColor="@color/trovami_textGray"
         android:textColorHint="@color/trovami_textGray"
