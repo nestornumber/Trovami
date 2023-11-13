@@ -1,7 +1,5 @@
+
 package com.cubit.trovami;
-
-
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -38,10 +36,20 @@ public class MostrarResultados extends AppCompatActivity {
                 objetoLayout.setBackgroundResource(R.drawable.trovami_card_result);
                 objetoLayout.setPadding(20, 20, 20, 20);
 
+                // Añadir margen inferior entre tarjetas
+                LinearLayout.LayoutParams paramsObjetoLayout = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+                paramsObjetoLayout.setMargins(0, 0, 0, 20);
+                objetoLayout.setLayoutParams(paramsObjetoLayout);
+
                 TextView textViewNombre = new TextView(this);
                 textViewNombre.setId(View.generateViewId());
                 textViewNombre.setText(nombre);
                 textViewNombre.setTextSize(getResources().getDimension(R.dimen.font_size_large));
+                textViewNombre.setTextColor(getResources().getColor(android.R.color.black));
                 RelativeLayout.LayoutParams paramsNombre = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.MATCH_PARENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
@@ -63,6 +71,7 @@ public class MostrarResultados extends AppCompatActivity {
                 textViewUbicacion.setId(View.generateViewId());
                 textViewUbicacion.setText("Ubicación: " + ubicacion);
                 textViewUbicacion.setTextSize(getResources().getDimension(R.dimen.font_size_medium));
+                textViewUbicacion.setTextColor(getResources().getColor(android.R.color.black));
                 RelativeLayout.LayoutParams paramsUbicacion = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.MATCH_PARENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
@@ -75,6 +84,7 @@ public class MostrarResultados extends AppCompatActivity {
                 textViewEstanteria.setId(View.generateViewId());
                 textViewEstanteria.setText("Estantería: " + estanteria);
                 textViewEstanteria.setTextSize(getResources().getDimension(R.dimen.font_size_smallMedium));
+                textViewEstanteria.setTextColor(getResources().getColor(android.R.color.black));
                 RelativeLayout.LayoutParams paramsEstanteria = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.MATCH_PARENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
@@ -96,35 +106,37 @@ public class MostrarResultados extends AppCompatActivity {
                 // Obtener el nombre del objeto actual para pasarlo a la siguiente actividad
                 final String nombreObjetoActual = nombre;
 
-                Button botonEditar = new Button(this);
-                botonEditar.setText("Editar");
-                botonEditar.setBackgroundResource(R.drawable.trovami_btn_editar);
-                botonEditar.setTextColor(getResources().getColor(R.color.trovami_textGray));
-                RelativeLayout.LayoutParams paramsEditar = new RelativeLayout.LayoutParams(
+                Button botonEliminar = new Button(this);
+                botonEliminar.setText("Eliminar");
+                botonEliminar.setBackgroundResource(R.drawable.trovami_btn_editar);
+                botonEliminar.setTextColor(getResources().getColor(android.R.color.black));
+                RelativeLayout.LayoutParams paramsEliminar = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
-                paramsEditar.addRule(RelativeLayout.BELOW, textViewEstanteria.getId());
-                paramsEditar.setMargins(0, 24, 0, 0);
-                objetoLayout.addView(botonEditar, paramsEditar);
-                botonEditar.setOnClickListener(new View.OnClickListener() {
+                paramsEliminar.addRule(RelativeLayout.BELOW, textViewEstanteria.getId());
+                paramsEliminar.addRule(RelativeLayout.ALIGN_PARENT_START);
+                paramsEliminar.setMargins(0, 10, 0, 0);
+                objetoLayout.addView(botonEliminar, paramsEliminar);
+                botonEliminar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // Lógica para editar el objeto
-                        abrirEditarObjeto(nombreObjetoActual);
+                        // Lógica para eliminar el objeto
+                        eliminarObjeto(nombreObjetoActual);
                     }
                 });
 
                 Button botonLoTome = new Button(this);
                 botonLoTome.setText("Lo Tomé");
                 botonLoTome.setBackgroundResource(R.drawable.trovami_btn_lotome);
-                botonLoTome.setTextColor(getResources().getColor(R.color.trovami_textWhite));
+                botonLoTome.setTextColor(getResources().getColor(android.R.color.white));
                 RelativeLayout.LayoutParams paramsLoTome = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
                 paramsLoTome.addRule(RelativeLayout.BELOW, textViewEstanteria.getId());
-                paramsLoTome.setMargins(20, 24, 0, 0);
+                paramsLoTome.addRule(RelativeLayout.ALIGN_PARENT_END);
+                paramsLoTome.setMargins(0, 10, 0, 0);
                 objetoLayout.addView(botonLoTome, paramsLoTome);
                 botonLoTome.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -147,5 +159,19 @@ public class MostrarResultados extends AppCompatActivity {
         Intent intent = new Intent(this, ConfigurarAlertas.class);
         intent.putExtra("nombreObjeto", nombreObjeto);
         startActivity(intent);
+    }
+
+    private void eliminarObjeto(String nombreObjeto) {
+        // Lógica para eliminar el objeto
+        SharedPreferences preferences = getSharedPreferences("ObjetosData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove(nombreObjeto);
+        editor.remove(nombreObjeto + "_estanteria");
+        editor.remove(nombreObjeto + "_imagen");
+        editor.apply();
+
+        // Recargar la actividad para reflejar los cambios
+        finish();
+        startActivity(getIntent());
     }
 }
