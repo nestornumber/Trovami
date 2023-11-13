@@ -52,9 +52,9 @@
         <activity
             android:name=".Presentacion1"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".AcercaDe"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".AcercaDe"
+            android:exported="false" />
         <activity
             android:name=".Presentacion3"
             android:exported="false" />
@@ -86,11 +86,10 @@
             android:name=".Presentacion0"
             android:exported="false" />
         <activity
-            android:name=".AcercaDe"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
