@@ -29,6 +29,7 @@ public class MostrarResultados extends AppCompatActivity {
 
     private LinearLayout linearLayoutContenedor;
     private EditText editTextBuscar;
+    private boolean objetoTomado = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +121,7 @@ public class MostrarResultados extends AppCompatActivity {
         scrollView.addView(layoutPrincipal);
         setContentView(scrollView);
 
+        objetoTomado = false;
         mostrarTodosObjetos();
     }
 
@@ -130,6 +132,7 @@ public class MostrarResultados extends AppCompatActivity {
         Set<String> keys = preferences.getAll().keySet();
         for (String key : keys) {
             if (!key.endsWith("_estanteria") && !key.endsWith("_imagen")) {
+                objetoTomado = getEstadoObjetoTomado(key);
                 mostrarObjetoLayout(key);
             }
         }
@@ -239,7 +242,6 @@ public class MostrarResultados extends AppCompatActivity {
         });
 
         Button botonLoTome = new Button(this);
-        botonLoTome.setText("Lo Tomé");
         botonLoTome.setBackgroundResource(R.drawable.trovami_btn_lotome);
         botonLoTome.setTextColor(Color.WHITE);
         RelativeLayout.LayoutParams paramsLoTome = new RelativeLayout.LayoutParams(
@@ -250,10 +252,27 @@ public class MostrarResultados extends AppCompatActivity {
         paramsLoTome.addRule(RelativeLayout.ALIGN_PARENT_END);
         paramsLoTome.setMargins(0, 10, 0, 0);
         objetoLayout.addView(botonLoTome, paramsLoTome);
+
+        // Restaurar el estado del botón
+        if (objetoTomado) {
+            botonLoTome.setText("Devolver");
+        } else {
+            botonLoTome.setText("Lo Tomé");
+        }
+
         botonLoTome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mostrarNotificacion("Tomaste el objeto: " + nombreObjetoActual);
+                if (objetoTomado) {
+                    objetoTomado = false;
+                    botonLoTome.setText("Lo Tomé");
+                    eliminarNotificacion();
+                } else {
+                    objetoTomado = true;
+                    botonLoTome.setText("Devolver");
+                    mostrarNotificacion("Tomaste el objeto: " + nombreObjetoActual);
+                }
+                guardarEstadoObjetoTomado(nombreObjetoActual, objetoTomado);
             }
         });
     }
@@ -324,6 +343,27 @@ public class MostrarResultados extends AppCompatActivity {
 
         notificationManager.notify(1, notification);
     }
+
+    private boolean getEstadoObjetoTomado(String nombreObjeto) {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        return preferences.getBoolean("objetoTomado_" + nombreObjeto, false);
+    }
+
+    private void guardarEstadoObjetoTomado(String nombreObjeto, boolean estado) {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("objetoTomado_" + nombreObjeto, estado);
+        editor.apply();
+    }
+
+
+    private void eliminarNotificacion() {
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(1);
+
+        guardarEstadoObjetoTomado("objetoTomado", objetoTomado);
+    }
 }
 
 class NotificacionReceiver extends BroadcastReceiver {
@@ -331,22 +371,10 @@ class NotificacionReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-        if ("YA_LO_REGRESE".equals(action)) {
-            // Eliminar la notificación
-            NotificationManager notificationManager =
-                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.cancel(1);
-        } else if ("ELIMINAR_NOTIFICACION".equals(action)) {
-            // Este bloque ya estaba presente para eliminar la notificación
+        if ("YA_LO_REGRESE".equals(action) || "ELIMINAR_NOTIFICACION".equals(action)) {
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.cancel(1);
         }
     }
 }
-
-
-
-
-
-
