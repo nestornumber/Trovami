@@ -55,7 +55,7 @@ public class IniciarSesion extends AppCompatActivity {
                         if (switchRecuerdame.isChecked()) {
                             guardarDatosRecuerdame(usuario, contrasena);
                         }
-                        Intent intent = new Intent(IniciarSesion.this, EditarObjeto.class);
+                        Intent intent = new Intent(IniciarSesion.this, MostrarResultados.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(IniciarSesion.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
