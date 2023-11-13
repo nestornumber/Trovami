@@ -1,12 +1,18 @@
 package com.cubit.trovami;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.os.Build;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,11 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Set;
+import android.os.Bundle;
 
 public class MostrarResultados extends AppCompatActivity {
 
@@ -43,7 +47,7 @@ public class MostrarResultados extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
-        paramsLayoutPrincipal.setMargins(16, 16, 16, 16); // Margen general
+        paramsLayoutPrincipal.setMargins(16, 16, 16, 16);
         layoutPrincipal.setLayoutParams(paramsLayoutPrincipal);
 
         editTextBuscar = new EditText(this);
@@ -143,7 +147,6 @@ public class MostrarResultados extends AppCompatActivity {
         objetoLayout.setBackgroundResource(R.drawable.trovami_card_result);
         objetoLayout.setPadding(20, 20, 20, 20);
 
-        // Configurar fondo y borde de la tarjeta
         GradientDrawable border = new GradientDrawable();
         border.setColor(getResources().getColor(R.color.trovami_background));
         border.setStroke(2, Color.BLACK);
@@ -250,7 +253,7 @@ public class MostrarResultados extends AppCompatActivity {
         botonLoTome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirConfigurarAlertas(nombreObjetoActual);
+                mostrarNotificacion("Tomaste el objeto: " + nombreObjetoActual);
             }
         });
     }
@@ -272,14 +275,8 @@ public class MostrarResultados extends AppCompatActivity {
         if (preferences.contains(nombreObjeto)) {
             mostrarObjetoLayout(nombreObjeto);
         } else {
-            Toast.makeText(this, "Objeto no encontrado", Toast.LENGTH_SHORT).show();
+            mostrarNotificacion("Objeto no encontrado");
         }
-    }
-
-    private void abrirConfigurarAlertas(String nombreObjeto) {
-        Intent intent = new Intent(this, ConfigurarAlertas.class);
-        intent.putExtra("nombreObjeto", nombreObjeto);
-        startActivity(intent);
     }
 
     private void eliminarObjeto(String nombreObjeto) {
@@ -293,4 +290,63 @@ public class MostrarResultados extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
+
+    private void mostrarNotificacion(String mensaje) {
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("mi_canal_id",
+                    "Mi Canal",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        Intent yaLoRegreseIntent = new Intent(this, NotificacionReceiver.class);
+        yaLoRegreseIntent.setAction("YA_LO_REGRESE");
+        PendingIntent yaLoRegresePendingIntent =
+                PendingIntent.getBroadcast(this, 0, yaLoRegreseIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Intent eliminarIntent = new Intent(this, NotificacionReceiver.class);
+        eliminarIntent.setAction("ELIMINAR_NOTIFICACION");
+        PendingIntent eliminarPendingIntent =
+                PendingIntent.getBroadcast(this, 0, eliminarIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Notification notification = new Notification.Builder(this, "mi_canal_id")
+                .setContentTitle("Notificación Trovami")
+                .setContentText(mensaje)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                .addAction(R.drawable.alerta_icon, "Ya lo Regresé", yaLoRegresePendingIntent)
+                .build();
+
+        notification.contentIntent = eliminarPendingIntent;
+
+        notificationManager.notify(1, notification);
+    }
 }
+
+class NotificacionReceiver extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+        if ("YA_LO_REGRESE".equals(action)) {
+            // Eliminar la notificación
+            NotificationManager notificationManager =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.cancel(1);
+        } else if ("ELIMINAR_NOTIFICACION".equals(action)) {
+            // Este bloque ya estaba presente para eliminar la notificación
+            NotificationManager notificationManager =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.cancel(1);
+        }
+    }
+}
+
+
+
+
+
+

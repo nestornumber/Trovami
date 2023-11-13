@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="radioButton1Min" type="id"/>
+    <item name="radioButton30Min" type="id"/>
+    <item name="radioButton1Hora" type="id"/>
+    <item name="radioButton3Horas" type="id"/>
+    <item name="radioButton5Horas" type="id"/>
+    <item name="radioButton8Horas" type="id"/>
+    <item name="radioButton10Horas" type="id"/>
+</resources>
