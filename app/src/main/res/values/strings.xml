@@ -15,7 +15,7 @@
 
 
     <!--    EDITAR OBJETO-->
-    <string name="editarObjeto_Titulo">Editar objeto</string>
+    <string name="editarObjeto_Titulo">Añadir objeto</string>
     <string name="editarObjeto_Subtitulo">Edita la información del objeto.</string>
     <string name="editarObjeto_Nombre">NOMBRE</string>
     <string name="editarObjeto_Ubicacion">UBICACIÓN</string>
