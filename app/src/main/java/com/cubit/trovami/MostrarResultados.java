@@ -1,5 +1,6 @@
 package com.cubit.trovami;
 
+import android.graphics.BitmapFactory;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -8,7 +9,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -31,10 +31,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.Set;
+
 public class MostrarResultados extends AppCompatActivity {
 
     private LinearLayout linearLayoutContenedor;
@@ -45,45 +46,12 @@ public class MostrarResultados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.search);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id= item.getItemId();
-                if (id == R.id.home){
-                    startActivity(new Intent(getApplicationContext(),
-                            Busqueda.class));
-                    overridePendingTransition (0, 0); return true;
-                }
-                if (id == R.id.search) {
-                    startActivity(new Intent(getApplicationContext(),
-                            MostrarResultados.class));
-                    overridePendingTransition(0, 0); return true;
-                }
-                if (id == R.id.edit){
-                    startActivity(new Intent(getApplicationContext(),
-                            EditarObjeto.class));
-                    overridePendingTransition (0, 8); return true;
-                }
-                if (id == R.id.settings){
-                    startActivity(new Intent(getApplicationContext(),
-                            Ajustes.class));
-                    overridePendingTransition (0, 8); return true;
-                }
-                return false;
-            }
-        });
-
         ScrollView scrollView = new ScrollView(this);
         scrollView.setLayoutParams(new ScrollView.LayoutParams(
                 ScrollView.LayoutParams.MATCH_PARENT,
                 ScrollView.LayoutParams.MATCH_PARENT
         ));
-
-
-
-        scrollView.setBackgroundColor(getResources().getColor(R.color.trovami_background));
+        scrollView.setBackgroundColor(ContextCompat.getColor(this, R.color.trovami_background));
 
         LinearLayout layoutPrincipal = new LinearLayout(this);
         layoutPrincipal.setOrientation(LinearLayout.VERTICAL);
@@ -94,35 +62,72 @@ public class MostrarResultados extends AppCompatActivity {
         paramsLayoutPrincipal.setMargins(16, 16, 16, 16);
         layoutPrincipal.setLayoutParams(paramsLayoutPrincipal);
 
-        ImageButton btnAjustes = new ImageButton(this);
-        btnAjustes.setImageResource(R.drawable.ajustes_icon_style);
-        btnAjustes.setBackgroundColor(getResources().getColor(R.color.trovami_background));
-        LinearLayout.LayoutParams paramsBtnAjustes = new LinearLayout.LayoutParams(
-                150,
-                150
-        );
-        paramsBtnAjustes.gravity = Gravity.END | Gravity.TOP;
-        btnAjustes.setLayoutParams(paramsBtnAjustes);
-        layoutPrincipal.addView(btnAjustes);
+        LinearLayout botonesLayoutSuperior = new LinearLayout(this);
+        botonesLayoutSuperior.setOrientation(LinearLayout.HORIZONTAL);
+        botonesLayoutSuperior.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
 
-        btnAjustes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MostrarResultados.this, Ajustes.class);
-                startActivity(intent);
-            }
-        });
+        // Botones adicionales
+        String[] nombresBotones = {"Inicio", "Buscar", "Agregar", "Ajustes"};
+        int[] drawables = {
+                R.drawable.nav_icon_home,
+                R.drawable.nav_icon_search,
+                R.drawable.nav_icon_add2,
+                R.drawable.nav_icon_settings
+        };
+
+        for (int i = 0; i < nombresBotones.length; i++) {
+            Button boton = new Button(this);
+            boton.setText(nombresBotones[i]);
+            boton.setBackgroundResource(R.drawable.trovami_btn_editar);
+            boton.setTextColor(Color.BLACK);
+
+            // Configura el tamaño del botón (ajusta según tus necesidades)
+            LinearLayout.LayoutParams paramsBoton = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            paramsBoton.setMargins(0, 0, 10, 0);  // Ajusta los márgenes según tu diseño
+            boton.setLayoutParams(paramsBoton);
+
+            // Puedes ajustar el tamaño del texto
+            boton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+
+            // Configura el icono del botón
+            boton.setCompoundDrawablesWithIntrinsicBounds(0, drawables[i], 0, 0);
+
+
+            final int finalI = i;
+            boton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    abrirActividad(finalI);
+                }
+            });
+            botonesLayoutSuperior.addView(boton);
+        }
+
+        layoutPrincipal.addView(botonesLayoutSuperior);
 
 
         editTextBuscar = new EditText(this);
+        editTextBuscar.setId(View.generateViewId());
         editTextBuscar.setHint("Ingrese el nombre del objeto");
-        editTextBuscar.setHintTextColor(Color.BLACK);
-        editTextBuscar.setTextColor(Color.BLACK);
+        editTextBuscar.setHintTextColor(ContextCompat.getColor(this, R.color.trovami_textGray));
+        editTextBuscar.setTextColor(ContextCompat.getColor(this, R.color.trovami_textGray));
+        editTextBuscar.setBackground(ContextCompat.getDrawable(this, R.drawable.trovami_btn_rounded));
+        editTextBuscar.setTypeface(getResources().getFont(R.font.inter_regular_style));
+        editTextBuscar.setPadding(25, 10, 25, 10);
+        editTextBuscar.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        editTextBuscar.setAllCaps(false);
+
         LinearLayout.LayoutParams paramsEditText = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        paramsEditText.setMargins(0, 20, 0, 20);
+        paramsEditText.setMargins(0, 50, 0, 0);
         editTextBuscar.setLayoutParams(paramsEditText);
         layoutPrincipal.addView(editTextBuscar);
 
@@ -187,6 +192,37 @@ public class MostrarResultados extends AppCompatActivity {
         objetoTomado = false;
         mostrarTodosObjetos();
     }
+
+    private void abrirActividad(int posicionBoton) {
+        Intent intent;
+
+        switch (posicionBoton) {
+            case 0:
+                // Lógica para el primer botón (Inicio)
+                intent = new Intent(MostrarResultados.this, Busqueda.class);
+                startActivity(intent);
+                break;
+            case 1:
+                // Lógica para el segundo botón (Buscar)
+                intent = new Intent(MostrarResultados.this, MostrarResultados.class);
+                startActivity(intent);
+                break;
+            case 2:
+                // Lógica para el tercer botón (Agregar)
+                intent = new Intent(MostrarResultados.this, EditarObjeto.class);
+                startActivity(intent);
+                break;
+            case 3:
+                // Lógica para el tercer botón (ajustes)
+                intent = new Intent(MostrarResultados.this, Ajustes.class);
+                startActivity(intent);
+                break;
+
+            default:
+                // Manejo por defecto o lanzar una excepción si es necesario
+                break;}
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuItem ajustesItem = menu.add("Ajustes");
@@ -246,7 +282,7 @@ public class MostrarResultados extends AppCompatActivity {
         objetoLayout.setPadding(20, 20, 20, 20);
 
         GradientDrawable border = new GradientDrawable();
-        border.setColor(getResources().getColor(R.color.trovami_background));
+        border.setColor(ContextCompat.getColor(this, R.color.trovami_background));
         border.setStroke(2, Color.BLACK);
         objetoLayout.setBackground(border);
 
@@ -397,10 +433,6 @@ public class MostrarResultados extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("ObjetosData", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.remove(nombreObjeto);
-        editor.remove(nombreObjeto + "_estanteria");
-        editor.remove(nombreObjeto + "_imagen");
-        editor.apply();
-
         finish();
         startActivity(getIntent());
     }
@@ -426,17 +458,16 @@ public class MostrarResultados extends AppCompatActivity {
         PendingIntent eliminarPendingIntent =
                 PendingIntent.getBroadcast(this, 0, eliminarIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Notification notification = new Notification.Builder(this, "mi_canal_id")
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "mi_canal_id")
                 .setContentTitle("Notificación Trovami")
                 .setContentText(mensaje)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
                 .addAction(R.drawable.alerta_icon, "Ya lo Regresé", yaLoRegresePendingIntent)
-                .build();
+                .setContentIntent(eliminarPendingIntent)
+                .setAutoCancel(true);
 
-        notification.contentIntent = eliminarPendingIntent;
-
-        notificationManager.notify(1, notification);
+        notificationManager.notify(1, builder.build());
     }
 
     private boolean getEstadoObjetoTomado(String nombreObjeto) {
