@@ -10,9 +10,9 @@
         android:title="Buscar"
         android:icon="@drawable/nav_icon_search"/>
     <item
-        android:id="@+id/add"
+        android:id="@+id/edit"
         android:title="Añadir"
-        android:icon="@drawable/nav_icon_add"/>
+        android:icon="@drawable/nav_icon_add2"/>
     <item
         android:id="@+id/settings"
         android:title="Settings"

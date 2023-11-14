@@ -46,9 +46,7 @@ public class MostrarResultados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
+        bottomNavigationView.setSelectedItemId(R.id.search);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,9 +56,12 @@ public class MostrarResultados extends AppCompatActivity {
                             Busqueda.class));
                     overridePendingTransition (0, 0); return true;
                 }
-                if (id == R.id.search) { return true;
+                if (id == R.id.search) {
+                    startActivity(new Intent(getApplicationContext(),
+                            MostrarResultados.class));
+                    overridePendingTransition(0, 0); return true;
                 }
-                if (id == R.id.add){
+                if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
                     overridePendingTransition (0, 8); return true;

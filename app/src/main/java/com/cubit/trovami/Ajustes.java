@@ -24,9 +24,7 @@ public class Ajustes extends AppCompatActivity {
         setContentView(R.layout.activity_ajustes);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
+        bottomNavigationView.setSelectedItemId(R.id.settings);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -41,12 +39,15 @@ public class Ajustes extends AppCompatActivity {
                             MostrarResultados.class));
                     overridePendingTransition(0, 0); return true;
                 }
-                if (id == R.id.add){
+                if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
                     overridePendingTransition (0, 8); return true;
                 }
-                if (id == R.id.settings){ return true;
+                if (id == R.id.settings){
+                    startActivity(new Intent(getApplicationContext(),
+                            Ajustes.class));
+                    overridePendingTransition (0, 8); return true;
                 }
                 return false;
             }

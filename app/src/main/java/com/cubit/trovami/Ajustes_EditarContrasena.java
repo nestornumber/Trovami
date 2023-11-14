@@ -2,6 +2,7 @@ package com.cubit.trovami;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,7 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Ajustes_EditarContrasena extends AppCompatActivity {
 
@@ -19,6 +23,37 @@ public class Ajustes_EditarContrasena extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes_editar_contrasena);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.settings);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id= item.getItemId();
+                if (id == R.id.home){
+                    startActivity(new Intent(getApplicationContext(),
+                            Busqueda.class));
+                    overridePendingTransition (0, 0); return true;
+                }
+                if (id == R.id.search) {
+                    startActivity(new Intent(getApplicationContext(),
+                            MostrarResultados.class));
+                    overridePendingTransition(0, 0); return true;
+                }
+                if (id == R.id.edit){
+                    startActivity(new Intent(getApplicationContext(),
+                            EditarObjeto.class));
+                    overridePendingTransition (0, 8); return true;
+                }
+                if (id == R.id.settings){
+                    startActivity(new Intent(getApplicationContext(),
+                            Ajustes.class));
+                    overridePendingTransition (0, 8); return true;
+                }
+                return false;
+            }
+        });
+
 
         // Obtener referencias a las vistas
         TextView tvNombreUsuario = findViewById(R.id.tvAjustes5);

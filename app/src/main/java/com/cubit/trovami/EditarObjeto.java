@@ -51,9 +51,7 @@ public class EditarObjeto extends AppCompatActivity {
         setContentView(R.layout.activity_editar_objeto);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
+        bottomNavigationView.setSelectedItemId(R.id.edit);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -68,7 +66,10 @@ public class EditarObjeto extends AppCompatActivity {
                             MostrarResultados.class));
                     overridePendingTransition(0, 0); return true;
                 }
-                if (id == R.id.add){ return true;
+                if (id == R.id.edit){
+                    startActivity(new Intent(getApplicationContext(),
+                            EditarObjeto.class));
+                    overridePendingTransition (0, 8); return true;
                 }
                 if (id == R.id.settings){
                     startActivity(new Intent(getApplicationContext(),

@@ -18,21 +18,22 @@ public class Busqueda extends AppCompatActivity {
         setContentView(R.layout.activity_busqueda);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
+        bottomNavigationView.setSelectedItemId(R.id.search);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id= item.getItemId();
-                if (id == R.id.home){ return true;
+                if (id == R.id.home){
+                    startActivity(new Intent(getApplicationContext(),
+                            Busqueda.class));
+                    overridePendingTransition (0, 0); return true;
                 }
                 if (id == R.id.search) {
                     startActivity(new Intent(getApplicationContext(),
                             MostrarResultados.class));
                     overridePendingTransition(0, 0); return true;
                 }
-                if (id == R.id.add){
+                if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
                     overridePendingTransition (0, 8); return true;
@@ -46,19 +47,19 @@ public class Busqueda extends AppCompatActivity {
             }
         });
 
-        Button btnAjustes = findViewById(R.id.button3);
+//        Button btnAjustes = findViewById(R.id.button3);
         Button btnBuscar = findViewById(R.id.button1);
         Button btnAnadirObjeto = findViewById(R.id.button2);
 
         // Configurar evento de clic para el botón "Ajustes"
-        btnAjustes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Navegar a la actividad de ajustes
-                Intent intent = new Intent(Busqueda.this, Ajustes.class);
-                startActivity(intent);
-            }
-        });
+//        btnAjustes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Navegar a la actividad de ajustes
+//                Intent intent = new Intent(Busqueda.this, Ajustes.class);
+//                startActivity(intent);
+//            }
+//        });
 
         // Configurar evento de clic para el botón "Buscar"
         btnBuscar.setOnClickListener(new View.OnClickListener() {
