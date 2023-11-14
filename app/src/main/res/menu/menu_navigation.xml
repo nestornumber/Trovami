@@ -15,6 +15,6 @@
         android:icon="@drawable/nav_icon_add2"/>
     <item
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="Ajustes"
         android:icon="@drawable/nav_icon_settings"/>
 </menu>
