@@ -201,7 +201,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:theme="@style/Theme.Material3.DayNight.NoActionBar"
-app:itemRippleColor="@color/trovami_buttonBeigeStroke"
+        app:itemRippleColor="@color/trovami_buttonBeigeStroke"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+
         app:itemBackground="@color/trovami_buttonBeigeBackground"
         app:itemIconTint="@color/trovami_textGreen"
         app:itemTextColor="@color/trovami_textGreen"

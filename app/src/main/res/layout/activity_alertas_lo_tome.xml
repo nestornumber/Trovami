@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,127 +8,129 @@
     android:background="@color/trovami_background"
     tools:context=".Alertas_lo_tome">
 
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_above="@+id/bottom_navigation"
-       android:paddingBottom="20dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:paddingBottom="20dp">
 
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-         <TextView
-             android:id="@+id/tvAlertas"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="33dp"
-             android:fontFamily="@font/inter_semibold_style"
-             android:text="@string/alertasLoTome_titulo"
-             android:textAlignment="center"
-             android:textColor="@color/trovami_textGray"
-             android:textSize="@dimen/font_size_large"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.5"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="parent" />
-
-
-         <TextView
-             android:id="@+id/tvVisionGeneral"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="36dp"
-             android:layout_marginTop="48dp"
-             android:fontFamily="@font/inter_regular_style"
-             android:text="@string/alertasLoTome_visionGeneral"
-             android:textColor="@color/trovami_textGray"
-             android:textSize="@dimen/font_size_small"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/tvAlertas" />
-
-         <TextView
-             android:id="@+id/tv1"
-             android:layout_width="325dp"
-             android:layout_height="wrap_content"
-             android:fontFamily="@font/inter_regular_style"
-             android:text="@string/alertasLoTome_descripcion1"
-             android:textSize="@dimen/font_size_small"
-             app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
-             tools:layout_editor_absoluteY="177dp" />
-
-         <ImageView
-             android:id="@+id/imageView"
-             android:layout_width="135dp"
-             android:layout_height="145dp"
-             android:layout_marginTop="33dp"
-             android:contentDescription="@string/img"
-             app:layout_constraintTop_toBottomOf="@+id/tv1"
-             tools:layout_editor_absoluteX="138dp" />
-
-         <TextView
-             android:id="@+id/tv2"
-             android:layout_width="325dp"
-             android:layout_height="wrap_content"
-             android:fontFamily="@font/inter_regular_style"
-             android:text="@string/alertasLoTome_descripcion2"
-             android:textColor="@color/trovami_textGray"
-             android:textSize="@dimen/font_size_small"
-             app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
-             tools:layout_editor_absoluteY="435dp" />
-
-         <TextView
-             android:id="@+id/tv3"
-             android:layout_width="325dp"
-             android:layout_height="wrap_content"
-             android:fontFamily="@font/inter_regular_style"
-             android:text="@string/alertasLoTome_descripcion3"
-             android:textColor="@color/trovami_textGray"
-             android:textSize="@dimen/font_size_small"
-             app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
-             tools:layout_editor_absoluteY="486dp" />
+            <TextView
+                android:id="@+id/tvAlertas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:fontFamily="@font/inter_semibold_style"
+                android:text="@string/alertasLoTome_titulo"
+                android:textAlignment="center"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-         <TextView
-             android:id="@+id/tv4"
-             android:layout_width="325dp"
-             android:layout_height="wrap_content"
-             android:fontFamily="@font/inter_regular_style"
-             android:text="@string/alertasLoTome_descripcion4"
-             android:textColor="@color/trovami_textGray"
-             android:textSize="@dimen/font_size_small"
-             app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
-             tools:layout_editor_absoluteY="564dp" />
+            <TextView
+                android:id="@+id/tvVisionGeneral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/alertasLoTome_visionGeneral"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlertas" />
 
-         <Button
-             android:id="@+id/btnRegresar"
-             android:layout_width="120dp"
-             android:layout_height="48dp"
-             android:layout_marginTop="30dp"
-             android:background="@drawable/trovami_btn"
-             android:fontFamily="@font/inter_regular_style"
-             android:text="@string/regresar"
-             android:textColor="@color/trovami_textGray"
-             android:textSize="@dimen/font_size_small"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.498"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/tv4" />
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/alertasLoTome_descripcion1"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
+                tools:layout_editor_absoluteY="177dp" />
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="135dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="33dp"
+                android:contentDescription="@string/img"
+                app:layout_constraintTop_toBottomOf="@+id/tv1"
+                tools:layout_editor_absoluteX="138dp" />
 
-   </ScrollView>
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/alertasLoTome_descripcion2"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
+                tools:layout_editor_absoluteY="435dp" />
 
-   <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/bottom_navigation"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_alignParentBottom="true"
-       android:theme="@style/Theme.Material3.DayNight.NoActionBar"
-app:itemRippleColor="@color/trovami_buttonBeigeStroke"
-       app:itemBackground="@color/trovami_buttonBeigeBackground"
-       app:itemIconTint="@color/trovami_textGreen"
-       app:itemTextColor="@color/trovami_textGreen"
-       app:menu="@menu/menu_navigation" />
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/alertasLoTome_descripcion3"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
+                tools:layout_editor_absoluteY="486dp" />
+
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/alertasLoTome_descripcion4"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintStart_toStartOf="@+id/tvVisionGeneral"
+                tools:layout_editor_absoluteY="564dp" />
+
+            <Button
+                android:id="@+id/btnRegresar"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/trovami_btn"
+                android:fontFamily="@font/inter_regular_style"
+                android:text="@string/regresar"
+                android:textColor="@color/trovami_textGray"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+        app:itemRippleColor="@color/trovami_buttonBeigeStroke"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+
+        app:itemBackground="@color/trovami_buttonBeigeBackground"
+        app:itemIconTint="@color/trovami_textGreen"
+        app:itemTextColor="@color/trovami_textGreen"
+        app:menu="@menu/menu_navigation" />
 
 </RelativeLayout>
