@@ -64,17 +64,17 @@ public class EditarObjeto extends AppCompatActivity {
                 if (id == R.id.search) {
                     startActivity(new Intent(getApplicationContext(),
                             MostrarResultados.class));
-                    overridePendingTransition(0, 0); return true;
+                    overridePendingTransition (0, 0); return true;
                 }
                 if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
-                    overridePendingTransition (0, 8); return true;
+                    overridePendingTransition (0, 0); return true;
                 }
                 if (id == R.id.settings){
                     startActivity(new Intent(getApplicationContext(),
                             Ajustes.class));
-                    overridePendingTransition (0, 8); return true;
+                    overridePendingTransition (0, 0); return true;
                 }
                 return false;
             }

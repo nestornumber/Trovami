@@ -18,7 +18,7 @@ public class Busqueda extends AppCompatActivity {
         setContentView(R.layout.activity_busqueda);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.search);
+        bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -31,17 +31,17 @@ public class Busqueda extends AppCompatActivity {
                 if (id == R.id.search) {
                     startActivity(new Intent(getApplicationContext(),
                             MostrarResultados.class));
-                    overridePendingTransition(0, 0); return true;
+                    overridePendingTransition (0, 0); return true;
                 }
                 if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
-                    overridePendingTransition (0, 8); return true;
+                    overridePendingTransition (0, 0); return true;
                 }
                 if (id == R.id.settings){
                     startActivity(new Intent(getApplicationContext(),
                             Ajustes.class));
-                    overridePendingTransition (0, 8); return true;
+                    overridePendingTransition (0, 0); return true;
                 }
                 return false;
             }
