@@ -25,23 +25,9 @@
 
 
         </LinearLayout>
+
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
-        app:itemRippleColor="@color/trovami_buttonBeigeStroke"
-        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
 
-        app:itemBackground="@color/trovami_buttonBeigeBackground"
-        app:itemIconTint="@color/trovami_textGreen"
-        app:itemTextColor="@color/trovami_textGreen"
-        app:menu="@menu/menu_navigation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

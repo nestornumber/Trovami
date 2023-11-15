@@ -95,7 +95,9 @@ public class IniciarSesion extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String storedUsuario = preferences.getString("usuario", "");
         String storedContrasena = preferences.getString("contrasena", "");
-        return usuario.equals(storedUsuario) || contrasena.equals(storedContrasena);
+
+        // Verificar si tanto el usuario como la contraseña coinciden
+        return usuario.equals(storedUsuario) && contrasena.equals(storedContrasena);
     }
 
     private void guardarDatosRecuerdame(String usuario, String contrasena) {

@@ -1,5 +1,6 @@
 package com.cubit.trovami;
 
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -112,7 +113,12 @@ public class EditarObjeto extends AppCompatActivity {
 
             }
         });
+        if (imagenSeleccionadaUri == null) {
+            imageView.setImageResource(R.drawable.editobj_info_image_720p);
+        }
+
     }
+
 
     private void tomarFoto() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -264,6 +270,4 @@ public class EditarObjeto extends AppCompatActivity {
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.editobj_info_image_720p));
         imagenSeleccionadaUri = null;
     }
-
-
 }

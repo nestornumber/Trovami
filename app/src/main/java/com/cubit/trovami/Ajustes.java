@@ -62,7 +62,7 @@ public class Ajustes extends AppCompatActivity {
 
         // Obtener referencias a los botones
         Button btnEditarContraseña = findViewById(R.id.button2);
-//        Button btnCambiarIdioma = findViewById(R.id.button6);
+        Button btnCambiarUsuario = findViewById(R.id.button1);
         Button btnCerrarSesion = findViewById(R.id.button3);
         Button btnAcercaDe = findViewById(R.id.button4);
         Button btnSalirDeLaApp = findViewById(R.id.button5);
@@ -76,13 +76,13 @@ public class Ajustes extends AppCompatActivity {
             }
         });
 
-//        btnCambiarIdioma.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Ajustes.this, CambiarIdioma.class);
-//                startActivity(intent);
-//            }
-//        });
+            btnCambiarUsuario.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(Ajustes.this, Ajustes_EditarNombres.class);
+               startActivity(intent);
+         }
+       });
 
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override

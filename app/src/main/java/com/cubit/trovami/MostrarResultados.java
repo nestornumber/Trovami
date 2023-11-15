@@ -1,5 +1,6 @@
 package com.cubit.trovami;
 
+
 import android.graphics.BitmapFactory;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -34,8 +35,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.Set;
 
 public class MostrarResultados extends AppCompatActivity {
@@ -47,36 +46,6 @@ public class MostrarResultados extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.search);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id= item.getItemId();
-                if (id == R.id.home){
-                    startActivity(new Intent(getApplicationContext(),
-                            Busqueda.class));
-                    return true;
-                }
-                if (id == R.id.search) {
-                    startActivity(new Intent(getApplicationContext(),
-                            MostrarResultados.class));
-                    return true;
-                }
-                if (id == R.id.edit){
-                    startActivity(new Intent(getApplicationContext(),
-                            EditarObjeto.class));
-                    return true;
-                }
-                if (id == R.id.settings){
-                    startActivity(new Intent(getApplicationContext(),
-                            Ajustes.class));
-                    return true;
-                }
-                return false;
-            }
-        });
 
         ScrollView scrollView = new ScrollView(this);
         scrollView.setLayoutParams(new ScrollView.LayoutParams(
@@ -110,26 +79,25 @@ public class MostrarResultados extends AppCompatActivity {
                 R.drawable.nav_icon_settings
         };
 
+        // Dentro del bucle for donde se crean los botones
         for (int i = 0; i < nombresBotones.length; i++) {
             Button boton = new Button(this);
             boton.setText(nombresBotones[i]);
-            boton.setBackgroundResource(R.drawable.trovami_btn_editar);
             boton.setTextColor(Color.BLACK);
+            boton.setBackgroundResource(R.drawable.trovami_btn_rounded); // Utilizamos el nuevo fondo
 
-            // Configura el tamaño del botón (ajusta según tus necesidades)
             LinearLayout.LayoutParams paramsBoton = new LinearLayout.LayoutParams(
+                    0,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
+                    1.0f
             );
-            paramsBoton.setMargins(0, 0, 10, 0);  // Ajusta los márgenes según tu diseño
+            paramsBoton.setMargins(0, 0, 10, 0); // Ajustamos los márgenes
             boton.setLayoutParams(paramsBoton);
 
-            // Puedes ajustar el tamaño del texto
             boton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
 
             // Configura el icono del botón
             boton.setCompoundDrawablesWithIntrinsicBounds(0, drawables[i], 0, 0);
-
 
             final int finalI = i;
             boton.setOnClickListener(new View.OnClickListener() {
@@ -141,8 +109,8 @@ public class MostrarResultados extends AppCompatActivity {
             botonesLayoutSuperior.addView(boton);
         }
 
-        layoutPrincipal.addView(botonesLayoutSuperior);
 
+        layoutPrincipal.addView(botonesLayoutSuperior);
 
         editTextBuscar = new EditText(this);
         editTextBuscar.setId(View.generateViewId());
@@ -152,7 +120,7 @@ public class MostrarResultados extends AppCompatActivity {
         editTextBuscar.setBackground(ContextCompat.getDrawable(this, R.drawable.trovami_btn_rounded));
         editTextBuscar.setTypeface(getResources().getFont(R.font.inter_regular_style));
         editTextBuscar.setPadding(25, 10, 25, 10);
-        editTextBuscar.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        editTextBuscar.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Cambié el tamaño de la fuente a 18
         editTextBuscar.setAllCaps(false);
 
         LinearLayout.LayoutParams paramsEditText = new LinearLayout.LayoutParams(
@@ -169,6 +137,7 @@ public class MostrarResultados extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         ));
+
 
         Button botonBuscar = new Button(this);
         botonBuscar.setText("Buscar");
@@ -314,7 +283,7 @@ public class MostrarResultados extends AppCompatActivity {
         objetoLayout.setPadding(20, 20, 20, 20);
 
         GradientDrawable border = new GradientDrawable();
-        border.setColor(ContextCompat.getColor(this, R.color.trovami_background));
+        border.setColor(ContextCompat.getColor(this, R.color.trovami_buttonBeigeBackground));
         border.setStroke(2, Color.BLACK);
         objetoLayout.setBackground(border);
 
@@ -387,7 +356,7 @@ public class MostrarResultados extends AppCompatActivity {
 
         Button botonEliminar = new Button(this);
         botonEliminar.setText("Eliminar");
-        botonEliminar.setBackgroundResource(R.drawable.trovami_btn_editar);
+        botonEliminar.setBackgroundResource(R.drawable.trovami_card_result);
         botonEliminar.setTextColor(Color.BLACK);
         RelativeLayout.LayoutParams paramsEliminar = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,

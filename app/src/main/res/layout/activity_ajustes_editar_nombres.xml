@@ -68,7 +68,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:text="nombredeusuario"
                 android:textColor="@color/trovami_textGray"
-                android:textSize="@dimen/font_size_small"
+                android:textSize="@dimen/font_size_medium"
                 app:layout_constraintStart_toStartOf="@+id/tvAjustes4"
                 app:layout_constraintTop_toBottomOf="@+id/tvAjustes4" />
 
@@ -166,7 +166,7 @@
                 android:background="@drawable/trovami_edit_text_style"
                 android:fontFamily="@font/inter_regular_style"
                 android:hint="Escribe la contraseña para guardar"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:textColor="@color/trovami_textGray"
                 android:textColorHint="@color/trovami_textGray"
