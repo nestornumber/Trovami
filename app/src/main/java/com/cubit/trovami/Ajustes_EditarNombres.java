@@ -25,22 +25,22 @@ public class Ajustes_EditarNombres extends AppCompatActivity {
                 if (id == R.id.home){
                     startActivity(new Intent(getApplicationContext(),
                             Busqueda.class));
-                    overridePendingTransition (0, 0); return true;
+                    return true;
                 }
                 if (id == R.id.search) {
                     startActivity(new Intent(getApplicationContext(),
                             MostrarResultados.class));
-                    overridePendingTransition(0, 0); return true;
+                    return true;
                 }
                 if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
-                    overridePendingTransition (0, 8); return true;
+                    return true;
                 }
                 if (id == R.id.settings){
                     startActivity(new Intent(getApplicationContext(),
                             Ajustes.class));
-                    overridePendingTransition (0, 8); return true;
+                    return true;
                 }
                 return false;
             }

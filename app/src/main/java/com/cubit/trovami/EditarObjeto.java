@@ -59,22 +59,22 @@ public class EditarObjeto extends AppCompatActivity {
                 if (id == R.id.home){
                     startActivity(new Intent(getApplicationContext(),
                             Busqueda.class));
-                    overridePendingTransition (0, 0); return true;
+                    return true;
                 }
                 if (id == R.id.search) {
                     startActivity(new Intent(getApplicationContext(),
                             MostrarResultados.class));
-                    overridePendingTransition(0, 0); return true;
+                    return true;
                 }
                 if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
-                    overridePendingTransition (0, 8); return true;
+                    return true;
                 }
                 if (id == R.id.settings){
                     startActivity(new Intent(getApplicationContext(),
                             Ajustes.class));
-                    overridePendingTransition (0, 8); return true;
+                    return true;
                 }
                 return false;
             }
@@ -109,7 +109,7 @@ public class EditarObjeto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 guardarDatosObjeto();
-                abrirMostrarResultados();
+
             }
         });
     }
@@ -265,8 +265,5 @@ public class EditarObjeto extends AppCompatActivity {
         imagenSeleccionadaUri = null;
     }
 
-    private void abrirMostrarResultados() {
-        Intent intent = new Intent(this, MostrarResultados.class);
-        startActivity(intent);
-    }
+
 }

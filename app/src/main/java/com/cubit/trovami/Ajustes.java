@@ -32,22 +32,22 @@ public class Ajustes extends AppCompatActivity {
                 if (id == R.id.home){
                     startActivity(new Intent(getApplicationContext(),
                             Busqueda.class));
-                    overridePendingTransition (0, 0); return true;
+                    return true;
                 }
                 if (id == R.id.search) {
                     startActivity(new Intent(getApplicationContext(),
                             MostrarResultados.class));
-                    overridePendingTransition(0, 0); return true;
+                    return true;
                 }
                 if (id == R.id.edit){
                     startActivity(new Intent(getApplicationContext(),
                             EditarObjeto.class));
-                    overridePendingTransition (0, 8); return true;
+                    return true;
                 }
                 if (id == R.id.settings){
                     startActivity(new Intent(getApplicationContext(),
                             Ajustes.class));
-                    overridePendingTransition (0, 8); return true;
+                    return true;
                 }
                 return false;
             }
@@ -62,7 +62,7 @@ public class Ajustes extends AppCompatActivity {
 
         // Obtener referencias a los botones
         Button btnEditarContraseña = findViewById(R.id.button2);
-      Button btnEditarNombre = findViewById(R.id.button1);
+//        Button btnCambiarIdioma = findViewById(R.id.button6);
         Button btnCerrarSesion = findViewById(R.id.button3);
         Button btnAcercaDe = findViewById(R.id.button4);
         Button btnSalirDeLaApp = findViewById(R.id.button5);
@@ -76,13 +76,13 @@ public class Ajustes extends AppCompatActivity {
             }
         });
 
-        btnEditarNombre.setOnClickListener(new View.OnClickListener() {
-            @Override
-           public void onClick(View view) {
-                Intent intent = new Intent(Ajustes.this, Ajustes_EditarNombres.class);
-              startActivity(intent);
-           }
-       });
+//        btnCambiarIdioma.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Ajustes.this, CambiarIdioma.class);
+//                startActivity(intent);
+//            }
+//        });
 
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
