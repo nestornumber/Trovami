@@ -119,21 +119,6 @@
 
     </ScrollView>
 
-<<<<<<< HEAD
-   <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/bottom_navigation"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_alignParentBottom="true"
-       android:theme="@style/Theme.Material3.DayNight.NoActionBar"
-       app:itemRippleColor="@color/trovami_buttonBeigeStroke"
-       app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-
-       app:itemBackground="@color/trovami_buttonBeigeBackground"
-       app:itemIconTint="@color/trovami_textGreen"
-       app:itemTextColor="@color/trovami_textGreen"
-       app:menu="@menu/menu_navigation" />
-=======
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -147,6 +132,5 @@
         app:itemIconTint="@color/trovami_textGreen"
         app:itemTextColor="@color/trovami_textGreen"
         app:menu="@menu/menu_navigation" />
->>>>>>> 0e1ad54a5a4bdc5e5b26b1a3b3a00312af39d952
 
 </RelativeLayout>
