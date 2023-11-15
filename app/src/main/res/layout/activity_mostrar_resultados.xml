@@ -7,10 +7,6 @@
     android:background="@color/trovami_background"
     tools:context=".MostrarResultados">
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e1ad54a5a4bdc5e5b26b1a3b3a00312af39d952
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -31,8 +27,6 @@
         </LinearLayout>
     </ScrollView>
 
-<<<<<<< HEAD
-=======
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
