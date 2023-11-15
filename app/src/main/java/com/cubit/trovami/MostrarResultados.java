@@ -23,14 +23,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
@@ -109,7 +107,6 @@ public class MostrarResultados extends AppCompatActivity {
             botonesLayoutSuperior.addView(boton);
         }
 
-
         layoutPrincipal.addView(botonesLayoutSuperior);
 
         editTextBuscar = new EditText(this);
@@ -137,7 +134,6 @@ public class MostrarResultados extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         ));
-
 
         Button botonBuscar = new Button(this);
         botonBuscar.setText("Buscar");
@@ -356,8 +352,8 @@ public class MostrarResultados extends AppCompatActivity {
 
         Button botonEliminar = new Button(this);
         botonEliminar.setText("Eliminar");
-        botonEliminar.setBackgroundResource(R.drawable.trovami_card_result);
-        botonEliminar.setTextColor(Color.BLACK);
+        botonEliminar.setBackgroundResource(R.drawable.trovami_btn_lotome);
+        botonEliminar.setTextColor(Color.WHITE);
         RelativeLayout.LayoutParams paramsEliminar = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
@@ -434,8 +430,10 @@ public class MostrarResultados extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("ObjetosData", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.remove(nombreObjeto);
-        finish();
-        startActivity(getIntent());
+        editor.remove(nombreObjeto + "_estanteria");
+        editor.remove(nombreObjeto + "_imagen");
+        editor.apply();
+        mostrarTodosObjetos(); // Actualiza la vista después de eliminar el objeto
     }
 
     private void mostrarNotificacion(String mensaje) {
