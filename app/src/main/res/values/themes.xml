@@ -11,4 +11,9 @@
     <item name="android:fontFamily">@font/inter_regular_style</item>
         <item name="android:textColor">@color/trovami_textGray</item>
     </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/trovami_nav_bar_active_indicator</item>
+    </style>
+
 </resources>

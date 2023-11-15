@@ -7,6 +7,10 @@
     android:background="@color/trovami_background"
     tools:context=".MostrarResultados">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0e1ad54a5a4bdc5e5b26b1a3b3a00312af39d952
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -14,8 +18,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-       >
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayoutContenedor"
@@ -25,10 +28,27 @@
             android:paddingBottom="30dp">
 
 
-
-
-
         </LinearLayout>
     </ScrollView>
 
+<<<<<<< HEAD
+=======
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+        app:itemRippleColor="@color/trovami_buttonBeigeStroke"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+
+        app:itemBackground="@color/trovami_buttonBeigeBackground"
+        app:itemIconTint="@color/trovami_textGreen"
+        app:itemTextColor="@color/trovami_textGreen"
+        app:menu="@menu/menu_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+>>>>>>> 0e1ad54a5a4bdc5e5b26b1a3b3a00312af39d952
 </androidx.constraintlayout.widget.ConstraintLayout>

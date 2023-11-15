@@ -46,6 +46,39 @@ public class MostrarResultados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+<<<<<<< HEAD
+=======
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.search);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id= item.getItemId();
+                if (id == R.id.home){
+                    startActivity(new Intent(getApplicationContext(),
+                            Busqueda.class));
+                    return true;
+                }
+                if (id == R.id.search) {
+                    startActivity(new Intent(getApplicationContext(),
+                            MostrarResultados.class));
+                    return true;
+                }
+                if (id == R.id.edit){
+                    startActivity(new Intent(getApplicationContext(),
+                            EditarObjeto.class));
+                    return true;
+                }
+                if (id == R.id.settings){
+                    startActivity(new Intent(getApplicationContext(),
+                            Ajustes.class));
+                    return true;
+                }
+                return false;
+            }
+        });
+
+>>>>>>> 0e1ad54a5a4bdc5e5b26b1a3b3a00312af39d952
         ScrollView scrollView = new ScrollView(this);
         scrollView.setLayoutParams(new ScrollView.LayoutParams(
                 ScrollView.LayoutParams.MATCH_PARENT,
