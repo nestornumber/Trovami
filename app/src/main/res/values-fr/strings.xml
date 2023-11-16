@@ -100,4 +100,15 @@
     <string name="segr">Il est recommandé d’utiliser un mot de passe fort et facile à retenir.</string>
     <string name="re">RENDRE</string>
     <string name="crear_cuenta3">CRÉER UN COMPTE</string>
+    <string name="boton_inicio">Commencement</string>
+    <string name="boton_buscar">Trouver</string>
+    <string name="boton_agregar">Ajouter</string>
+    <string name="boton_ajustes">Paramètres</string>
+    <string name="hint_buscar_objeto">Entrez le nom de l’objet</string>
+    <string name="texto_boton_todos">Toute</string>
+    <string name="texto_ubicacion">Emplacement:</string>
+    <string name="texto_estante">Étagère:</string>
+    <string name="texto_boton_eliminar">Éliminer</string>
+    <string name="texto_boton_lo_tome">Je l’ai pris</string>
+    <string name="texto_boton_lo_devol">Rendre</string>
 </resources>

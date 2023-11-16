@@ -100,4 +100,15 @@
     <string name="segr">Si consiglia di utilizzare una password complessa e facile da ricordare.</string>
     <string name="re">RITORNO</string>
     <string name="crear_cuenta3">CREA UN ACCOUNT</string>
+    <string name="boton_inicio">Inizio</string>
+    <string name="boton_buscar">Per trovare</string>
+    <string name="boton_agregar">Aggiungere</string>
+    <string name="boton_ajustes">Parametri</string>
+    <string name="hint_buscar_objeto">Immettere il nome dell\'oggetto</string>
+    <string name="texto_boton_todos">Tutto</string>
+    <string name="texto_ubicacion">Ubicazione:</string>
+    <string name="texto_estante">Scaffale:</string>
+    <string name="texto_boton_eliminar">Eliminare</string>
+    <string name="texto_boton_lo_tome">L\'ho preso</string>
+    <string name="texto_boton_lo_devol">Ritorno</string>
 </resources>

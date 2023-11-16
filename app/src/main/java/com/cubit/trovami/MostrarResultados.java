@@ -69,7 +69,12 @@ public class MostrarResultados extends AppCompatActivity {
         ));
 
         // Botones adicionales
-        String[] nombresBotones = {"Inicio", "Buscar", "Agregar", "Ajustes"};
+        String[] nombresBotones = {
+                getResources().getString(R.string.boton_inicio),
+                getResources().getString(R.string.boton_buscar),
+                getResources().getString(R.string.boton_agregar),
+                getResources().getString(R.string.boton_ajustes)
+        };
         int[] drawables = {
                 R.drawable.nav_icon_home,
                 R.drawable.nav_icon_search,
@@ -111,7 +116,7 @@ public class MostrarResultados extends AppCompatActivity {
 
         editTextBuscar = new EditText(this);
         editTextBuscar.setId(View.generateViewId());
-        editTextBuscar.setHint("Ingrese el nombre del objeto");
+        editTextBuscar.setHint(getString(R.string.hint_buscar_objeto));
         editTextBuscar.setHintTextColor(ContextCompat.getColor(this, R.color.trovami_textGray));
         editTextBuscar.setTextColor(ContextCompat.getColor(this, R.color.trovami_textGray));
         editTextBuscar.setBackground(ContextCompat.getDrawable(this, R.drawable.trovami_btn_rounded));
@@ -136,7 +141,7 @@ public class MostrarResultados extends AppCompatActivity {
         ));
 
         Button botonBuscar = new Button(this);
-        botonBuscar.setText("Buscar");
+        botonBuscar.setText(getString(R.string.boton_buscar));
         botonBuscar.setBackgroundResource(R.drawable.trovami_btn_lotome);
         botonBuscar.setTextColor(Color.WHITE);
         LinearLayout.LayoutParams paramsBotonBuscar = new LinearLayout.LayoutParams(
@@ -155,7 +160,7 @@ public class MostrarResultados extends AppCompatActivity {
         botonesLayout.addView(botonBuscar);
 
         Button botonTodos = new Button(this);
-        botonTodos.setText("Todos");
+        botonTodos.setText(getString(R.string.texto_boton_todos));
         botonTodos.setBackgroundResource(R.drawable.trovami_btn_lotome);
         botonTodos.setTextColor(Color.WHITE);
         LinearLayout.LayoutParams paramsBotonTodos = new LinearLayout.LayoutParams(
@@ -315,7 +320,7 @@ public class MostrarResultados extends AppCompatActivity {
 
         TextView textViewUbicacion = new TextView(this);
         textViewUbicacion.setId(View.generateViewId());
-        textViewUbicacion.setText("Ubicación: " + ubicacion);
+        textViewUbicacion.setText("getString(R.string.texto_ubicacion)"+ ubicacion);
         textViewUbicacion.setTextSize(getResources().getDimension(R.dimen.font_size_medium));
         textViewUbicacion.setTextColor(Color.BLACK);
         RelativeLayout.LayoutParams paramsUbicacion = new RelativeLayout.LayoutParams(
@@ -328,7 +333,7 @@ public class MostrarResultados extends AppCompatActivity {
 
         TextView textViewEstanteria = new TextView(this);
         textViewEstanteria.setId(View.generateViewId());
-        textViewEstanteria.setText("Estantería: " + estanteria);
+        textViewUbicacion.setText("getString(R.string.texto_estante)"+ estanteria);
         textViewEstanteria.setTextSize(getResources().getDimension(R.dimen.font_size_smallMedium));
         textViewEstanteria.setTextColor(Color.BLACK);
         RelativeLayout.LayoutParams paramsEstanteria = new RelativeLayout.LayoutParams(
@@ -351,7 +356,7 @@ public class MostrarResultados extends AppCompatActivity {
         final String nombreObjetoActual = nombre;
 
         Button botonEliminar = new Button(this);
-        botonEliminar.setText("Eliminar");
+        botonEliminar.setText(getString(R.string.texto_boton_eliminar));
         botonEliminar.setBackgroundResource(R.drawable.trovami_btn_lotome);
         botonEliminar.setTextColor(Color.WHITE);
         RelativeLayout.LayoutParams paramsEliminar = new RelativeLayout.LayoutParams(
@@ -383,9 +388,10 @@ public class MostrarResultados extends AppCompatActivity {
 
         // Restaurar el estado del botón
         if (objetoTomado) {
-            botonLoTome.setText("Devolver");
+            botonLoTome.setText(getString(R.string.texto_boton_lo_devol));
+
         } else {
-            botonLoTome.setText("Lo Tomé");
+            botonLoTome.setText(getString(R.string.texto_boton_lo_tome));
         }
 
         botonLoTome.setOnClickListener(new View.OnClickListener() {
@@ -393,11 +399,11 @@ public class MostrarResultados extends AppCompatActivity {
             public void onClick(View v) {
                 if (objetoTomado) {
                     objetoTomado = false;
-                    botonLoTome.setText("Lo Tomé");
+                    botonLoTome.setText(getString(R.string.texto_boton_lo_tome));
                     eliminarNotificacion();
                 } else {
                     objetoTomado = true;
-                    botonLoTome.setText("Devolver");
+                    botonLoTome.setText(getString(R.string.texto_boton_lo_devol));
                     mostrarNotificacion("Tomaste el objeto: " + nombreObjetoActual);
                 }
                 guardarEstadoObjetoTomado(nombreObjetoActual, objetoTomado);
@@ -466,7 +472,7 @@ public class MostrarResultados extends AppCompatActivity {
                 .setContentIntent(eliminarPendingIntent)
                 .setAutoCancel(true);
 
-        notificationManager.notify(1, builder.build());
+
     }
 
     private boolean getEstadoObjetoTomado(String nombreObjeto) {

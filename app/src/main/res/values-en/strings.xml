@@ -100,4 +100,15 @@
     <string name="segr">A strong, easy-to-remember password is recommended.</string>
     <string name="re">RETURN</string>
     <string name="crear_cuenta3">CREATE ACCOUNT</string>
+    <string name="boton_inicio">Beginning</string>
+    <string name="boton_buscar">To find</string>
+    <string name="boton_agregar">Add</string>
+    <string name="boton_ajustes">Settings</string>
+    <string name="hint_buscar_objeto">Enter the name of the object</string>
+    <string name="texto_boton_todos">All</string>
+    <string name="texto_ubicacion">Location:</string>
+    <string name="texto_estante">Rack:</string>
+    <string name="texto_boton_eliminar">Eliminate</string>
+    <string name="texto_boton_lo_tome">I took it</string>
+    <string name="texto_boton_lo_devol">Return</string>
 </resources>

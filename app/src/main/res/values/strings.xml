@@ -107,7 +107,17 @@
     <string name="segr">Se recomienda una contraseña segura y fácil de recordar.</string>
     <string name="re">REGRESAR</string>
     <string name="crear_cuenta3">CREAR CUENTA</string>
+    <string name="boton_inicio">Inicio</string>
+    <string name="boton_buscar">Buscar</string>
+    <string name="boton_agregar">Agregar</string>
+    <string name="boton_ajustes">Ajustes</string>
+    <string name="hint_buscar_objeto">Ingrese el nombre del objeto</string>
+    <string name="texto_boton_todos">Todos</string>
+    <string name="texto_ubicacion">Ubicación: </string>
+    <string name="texto_estante">Estanteria: </string>
+    <string name="texto_boton_eliminar">Eliminar</string>
+    <string name="texto_boton_lo_devol">Devolver</string>
+    <string name="texto_boton_lo_tome">Lo Tomé</string>
 
-    SONIDO
 
 </resources>
