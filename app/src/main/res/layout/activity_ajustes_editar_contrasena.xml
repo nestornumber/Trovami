@@ -68,7 +68,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:text="nombredeusuario"
                 android:textColor="@color/trovami_textGray"
-                android:textSize="@dimen/font_size_large"
+                android:textSize="@dimen/font_size_small"
                 app:layout_constraintStart_toStartOf="@+id/tvAjustes4"
                 app:layout_constraintTop_toBottomOf="@+id/tvAjustes4" />
 
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
                 android:fontFamily="@font/inter_regular"
-                android:text="Nombre de Usuario"
+                android:text="NOMBRE COMPLETO"
                 android:textColor="@color/trovami_textGray"
                 android:textSize="@dimen/font_size_medium"
                 app:layout_constraintStart_toStartOf="@+id/tvAjustes3"
@@ -105,8 +105,8 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/trovami_edit_text_style"
                 android:fontFamily="@font/inter_regular_style"
-                android:hint="Escriba su contraseña actual"
-                android:inputType="text"
+                android:hint="Contraseña actual"
+                android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:textColor="@color/trovami_textGray"
                 android:textColorHint="@color/trovami_textGray"
