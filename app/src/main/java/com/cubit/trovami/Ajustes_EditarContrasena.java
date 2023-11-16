@@ -69,7 +69,6 @@ public class Ajustes_EditarContrasena extends AppCompatActivity {
 
         // Mostrar datos actuales
         tvNombreUsuario.setText(nombreUsuarioGuardado);
-        etContraseñaActual.setText(contraseñaGuardada);
 
         // Configurar el evento de clic para el botón "GUARDAR"
         btnGuardar.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +94,6 @@ public class Ajustes_EditarContrasena extends AppCompatActivity {
                     // Iniciar la actividad IniciarSesion
                     Intent intent = new Intent(Ajustes_EditarContrasena.this, IniciarSesion.class);
                     startActivity(intent);
-
                 }
             }
         });
