@@ -68,7 +68,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:text="nombredeusuario"
                 android:textColor="@color/trovami_textGray"
-                android:textSize="@dimen/font_size_small"
+                android:textSize="@dimen/font_size_medium"
                 app:layout_constraintStart_toStartOf="@+id/tvAjustes4"
                 app:layout_constraintTop_toBottomOf="@+id/tvAjustes4" />
 
