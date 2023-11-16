@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,8 +63,7 @@ public class IniciarSesion extends AppCompatActivity {
                     } else {
                         intentosFallidos++;
                         if (intentosFallidos >= 3) {
-                            bloquearPantallaPor30Segundos();
-                            Toast.makeText(IniciarSesion.this, "Has intentado demasiadas veces. Inténtalo de nuevo más tarde.", Toast.LENGTH_LONG).show();
+                            mostrarMensajeConteoRegresivo();
                         } else {
                             Toast.makeText(IniciarSesion.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                         }
@@ -95,8 +94,6 @@ public class IniciarSesion extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String storedUsuario = preferences.getString("usuario", "");
         String storedContrasena = preferences.getString("contrasena", "");
-
-        // Verificar si tanto el usuario como la contraseña coinciden
         return usuario.equals(storedUsuario) && contrasena.equals(storedContrasena);
     }
 
@@ -109,23 +106,29 @@ public class IniciarSesion extends AppCompatActivity {
         editor.apply();
     }
 
-    private void bloquearPantallaPor30Segundos() {
-        // Deshabilitar los EditText
-        EditText editTextUsuario = findViewById(R.id.editTextText3);
-        EditText editTextContrasena = findViewById(R.id.editTextText4);
-        editTextUsuario.setEnabled(false);
-        editTextContrasena.setEnabled(false);
+    private AlertDialog alertDialog;
 
-        // Habilitar después de 30 segundos
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+    private void mostrarMensajeConteoRegresivo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Has intentado demasiadas veces");
+        builder.setMessage("Inténtalo de nuevo más tarde.");
+        builder.setCancelable(false); // No permite cancelar el diálogo con el botón de retroceso
+
+        alertDialog = builder.create();
+        alertDialog.show();
+
+        CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {
             @Override
-            public void run() {
-                editTextUsuario.setEnabled(true);
-                editTextContrasena.setEnabled(true);
-                intentosFallidos = 0; // Reiniciar contador de intentos fallidos
+            public void onTick(long millisUntilFinished) {
+                alertDialog.setMessage("Has intentado demasiadas veces. Inténtalo de nuevo en: " + millisUntilFinished / 1000 + " segundos");
             }
-        }, 30000); // 30 segundos
+
+            @Override
+            public void onFinish() {
+                alertDialog.dismiss();
+                intentosFallidos = 0;
+            }
+        }.start();
     }
 
     private void mostrarDialogoOlvideContrasena() {
@@ -164,7 +167,6 @@ public class IniciarSesion extends AppCompatActivity {
         String storedUltimaContrasena = preferences.getString("contrasena", "");
 
         if (usuarioRecuperacion.equals(storedUsuario) || ultimaContrasena.equals(storedUltimaContrasena)) {
-            // Al menos uno de los datos es correcto, redirige a la actividad de cambiar contraseña
             Intent intent = new Intent(IniciarSesion.this, Ajustes_EditarContrasena.class);
             startActivity(intent);
         } else {
