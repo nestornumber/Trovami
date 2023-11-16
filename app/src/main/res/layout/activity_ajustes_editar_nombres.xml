@@ -79,9 +79,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
                 android:fontFamily="@font/inter_regular"
-                android:text="Nombre de usuario"
+                android:text="@string/nombre_de_usuario"
                 android:textColor="@color/trovami_textGray"
-                android:textSize="@dimen/font_size_medium"
+                android:textSize="@dimen/font_size_smallMedium"
                 app:layout_constraintStart_toStartOf="@+id/tvAjustes3"
                 app:layout_constraintTop_toBottomOf="@+id/tvAjustes3" />
 

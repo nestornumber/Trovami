@@ -52,9 +52,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/inter_regular"
-                android:text="@string/usuario"
+                android:text="@string/nombre_de_usuario"
                 android:textColor="@color/trovami_textGray"
-                android:textSize="@dimen/font_size_medium"
+                android:textSize="@dimen/font_size_smallMedium"
                 app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
                 app:layout_constraintTop_toBottomOf="@+id/tvAlertas2" />
 
@@ -62,11 +62,11 @@
                 android:id="@+id/tvAlertas4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/inter_regular"
                 android:text="nombreDeUsuario"
                 android:textColor="@color/trovami_textGray"
-                android:textSize="@dimen/font_size_medium"
+                android:textSize="@dimen/font_size_large"
                 app:layout_constraintStart_toStartOf="@+id/tvAlertas2"
                 app:layout_constraintTop_toBottomOf="@+id/tvAlertas3" />
 
