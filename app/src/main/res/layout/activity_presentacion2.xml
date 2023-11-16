@@ -22,7 +22,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/inter_bold_style"
         android:text="@string/b_squeda_instant_nea"
         android:textAlignment="center"
@@ -37,7 +37,7 @@
         android:id="@+id/tv6"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/inter_regular_style"
         android:text="@string/encuentra_tus_objetos_en_segundos_busca_por_nombre_o_navega_por_las_im_genes_para_recordar_d_nde_los_guardaste"
 
